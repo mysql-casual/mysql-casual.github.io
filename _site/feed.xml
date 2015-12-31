@@ -4,10 +4,10 @@
     <title>MySQL Casual</title>
     <description>perl-casualのコンセプトに触発され、もっと深く浅く、広く狭くMySQLを使っていこうと思っている趣旨の人とのつながりを作っていくための緩めのコミュニティです。 また、今更聞けない書けないようなことも改めて書いたりしていきます。
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 01 Jan 2016 02:48:24 +0900</pubDate>
-    <lastBuildDate>Fri, 01 Jan 2016 02:48:24 +0900</lastBuildDate>
+    <link>http://mysql-casual.org/</link>
+    <atom:link href="http://mysql-casual.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 01 Jan 2016 03:02:39 +0900</pubDate>
+    <lastBuildDate>Fri, 01 Jan 2016 03:02:39 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -22,8 +22,8 @@
 &lt;p&gt;それでは&lt;/p&gt;
 </description>
         <pubDate>Fri, 01 Jan 2016 02:46:29 +0900</pubDate>
-        <link>http://yourdomain.com/mysql/casual/2016/01/01/mysql-casual-9.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/mysql/casual/2016/01/01/mysql-casual-9.html</guid>
+        <link>http://mysql-casual.org/mysql/casual/2016/01/01/mysql-casual-9.html</link>
+        <guid isPermaLink="true">http://mysql-casual.org/mysql/casual/2016/01/01/mysql-casual-9.html</guid>
         
         
         <category>mysql</category>
@@ -50,8 +50,8 @@
 
 </description>
         <pubDate>Thu, 31 Dec 2015 18:15:29 +0900</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2015/12/31/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/12/31/welcome-to-jekyll.html</guid>
+        <link>http://mysql-casual.org/jekyll/update/2015/12/31/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://mysql-casual.org/jekyll/update/2015/12/31/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
@@ -67,8 +67,8 @@
 &lt;p&gt;アーカイブは &lt;a href=&quot;https://github.com/mysql-casual/mysql-casual.github.io/tree/master/archives/mysql-casual-old&quot;&gt;こちら&lt;/a&gt; にあります。&lt;/p&gt;
 </description>
         <pubDate>Thu, 31 Dec 2015 18:15:29 +0900</pubDate>
-        <link>http://yourdomain.com/mysql/casual/2015/12/31/transfer-to-github.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/mysql/casual/2015/12/31/transfer-to-github.html</guid>
+        <link>http://mysql-casual.org/mysql/casual/2015/12/31/transfer-to-github.html</link>
+        <guid isPermaLink="true">http://mysql-casual.org/mysql/casual/2015/12/31/transfer-to-github.html</guid>
         
         
         <category>mysql</category>

@@ -6,9 +6,31 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 01 Jan 2016 02:16:28 +0900</pubDate>
-    <lastBuildDate>Fri, 01 Jan 2016 02:16:28 +0900</lastBuildDate>
+    <pubDate>Fri, 01 Jan 2016 02:48:24 +0900</pubDate>
+    <lastBuildDate>Fri, 01 Jan 2016 02:48:24 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>MySQL Casual Talks vol.9 開催します</title>
+        <description>&lt;p&gt;MySQL Casual Talks vol.8で予告したとおり、vol.9を開催いたします。&lt;/p&gt;
+
+&lt;p&gt;今回は事前登録必須なので来たいと思う方は登録を絶対してください。&lt;/p&gt;
+
+&lt;p&gt;また、トーク枠LT枠ともに公募します。
+詳しくは &lt;a href=&quot;http://mysql-casual.connpass.com/event/24934/&quot;&gt;こちら&lt;/a&gt; をご確認ください。&lt;/p&gt;
+
+&lt;p&gt;それでは&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 02:46:29 +0900</pubDate>
+        <link>http://yourdomain.com/mysql/casual/2016/01/01/mysql-casual-9.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/mysql/casual/2016/01/01/mysql-casual-9.html</guid>
+        
+        
+        <category>mysql</category>
+        
+        <category>casual</category>
+        
+      </item>
     
       <item>
         <title>Welcome to Jekyll!</title>

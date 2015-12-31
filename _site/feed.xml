@@ -6,8 +6,8 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 31 Dec 2015 18:25:41 +0900</pubDate>
-    <lastBuildDate>Thu, 31 Dec 2015 18:25:41 +0900</lastBuildDate>
+    <pubDate>Thu, 31 Dec 2015 20:37:19 +0900</pubDate>
+    <lastBuildDate>Thu, 31 Dec 2015 20:37:19 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -41,6 +41,8 @@
       <item>
         <title>githubに移転しました</title>
         <description>&lt;p&gt;さくらのレンタルサーバを長らく使っていたのですが、もっと更新しやすいようにgithubへ移りました。今後ともよろしくお願いいたします。&lt;/p&gt;
+
+&lt;p&gt;アーカイブは &lt;a href=&quot;http://mysql-casual.org/archive/mysql-casual-old/&quot;&gt;こちら&lt;/a&gt; にあります。&lt;/p&gt;
 </description>
         <pubDate>Thu, 31 Dec 2015 18:15:29 +0900</pubDate>
         <link>http://yourdomain.com/mysql/casual/2015/12/31/transfer-to-github.html</link>

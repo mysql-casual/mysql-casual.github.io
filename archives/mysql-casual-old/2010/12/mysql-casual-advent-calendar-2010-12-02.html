@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="Movable Type 5.02" />
+<link rel="stylesheet" href="http://mysql-casual.org/styles.css" type="text/css" />
+<link rel="start" href="http://mysql-casual.org/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://mysql-casual.org/atom.xml" />
+<script type="text/javascript" src="http://mysql-casual.org/mt.js"></script>
+
+
+    
+    <link rel="prev bookmark" href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-01.html" title="mysqld_safeって何だ - MySQL Casual Advent Calendar 2010" />
+    <link rel="next bookmark" href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-03.html" title="ユーザ設定入門 - MySQL Casual Advent Calendar 2010" />
+    <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-02.html"
+    trackback:ping="http://mysql-casual.org/cgi-bin/mt/mt-tb.cgi/16"
+    dc:title="showコマンド - MySQL Casual Advent Calendar 2010"
+    dc:identifier="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-02.html"
+    dc:subject=""
+    dc:description="showコマンドはMySQLの設定状況を確認したりプロセスを確認したりするのに使..."
+    dc:creator="myfinder"
+    dc:date="2010-12-02T00:00:00+09:00" />
+</rdf:RDF>
+-->
+
+    
+    <title>showコマンド - MySQL Casual Advent Calendar 2010 - MySQL Casual</title>
+</head>
+<body id="classic-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://mysql-casual.org/" accesskey="1">MySQL Casual</a></div>
+            <div id="header-description"></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-16" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">showコマンド - MySQL Casual Advent Calendar 2010</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            <span class="vcard author">myfinder</span> (<abbr class="published" title="2010-12-02T00:00:00+09:00">2010年12月 2日 00:00</abbr>)
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-02.html#comments">コメント(0)</a>
+
+
+                                        <span class="separator">|</span> <a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-02.html#trackbacks">トラックバック(0)</a>
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        showコマンドはMySQLの設定状況を確認したりプロセスを確認したりするのに使います。<div><br /></div><div><font class="Apple-style-span" style="font-size: 1.25em; "><font class="Apple-style-span" style="font-size: 1.25em; "><font class="Apple-style-span" style="font-size: 0.8em; ">1. 設定値を見る</font></font></font></div><div><br /></div><div>例えば設定値を見る show variables; だと以下のような感じです。</div><div><br /></div><blockquote class="webkit-indent-blockquote" style="margin: 0 0 0 40px; border: none; padding: 0px;"><div><div>mysql&gt; show global variables;</div><div>+-----------------------------------------+-------------------------+</div><div>| Variable_name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Value &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |</div><div>+-----------------------------------------+-------------------------+</div><div>| auto_increment_increment &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |</div><div>| auto_increment_offset &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |</div><div>| autocommit &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | ON &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|</div><div>| automatic_sp_privileges &nbsp; &nbsp; &nbsp; | ON &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|</div><div>| back_log &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 50 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |</div></div><div>〜〜〜〜〜〜〜〜〜〜〜〜<meta charset="utf-8">〜〜〜〜〜〜〜〜〜〜</div><meta charset="utf-8"><br /></blockquote><meta charset="utf-8"><meta charset="utf-8"><div>単純に show global variables; すると、300件弱の設定がずらずら出てきて流れてしまうので、見たい項目がわかっている場合はlike句で絞り込めます。</div><div><br /></div><blockquote class="webkit-indent-blockquote" style="margin: 0 0 0 40px; border: none; padding: 0px;"><div><div>mysql&gt; show global variables like 'version%';</div><div>+-------------------------+------------------------------+</div><div>| Variable_name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Value &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|</div><div>+-------------------------+------------------------------+</div><div>| version &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 5.1.51-log &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |</div><div>| version_comment &nbsp; &nbsp; &nbsp; &nbsp; | MySQL Community Server (GPL) |</div><div>| version_compile_machine | x86_64 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |</div><div>| version_compile_os &nbsp; &nbsp; &nbsp;| unknown-linux-gnu &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|</div><div>+-------------------------+------------------------------+</div><div>4 rows in set (0.00 sec)</div></div></blockquote><div><br /></div><div>こんな感じに。</div><div>見たい項目が一つだけで、変数名がわかっている場合は select @@variables; で引く事ができます。</div><div><br /></div><blockquote class="webkit-indent-blockquote" style="margin: 0 0 0 40px; border: none; padding: 0px;"><div><div>mysql&gt; select @@version;</div><div>+------------+</div><div>| @@version &nbsp;|</div><div>+------------+</div><div>| 5.1.51-log |</div><div>+------------+</div><div>1 row in set (0.00 sec)</div></div></blockquote><div><br /></div><div><font class="Apple-style-span" style="font-size: 1.25em; "><font class="Apple-style-span" style="font-size: 1.25em; "><font class="Apple-style-span" style="font-size: 0.8em; ">2. ステータス変数を見る</font></font></font></div><div><br /></div><div>他にMySQLはステータス変数を持っており、これらは show status; コマンドで見られます。</div><div><br /></div><blockquote class="webkit-indent-blockquote" style="margin: 0 0 0 40px; border: none; padding: 0px;"><div><div>mysql&gt; show global status;</div><div>+-----------------------------------+----------+</div><div>| Variable_name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Value &nbsp; &nbsp;|</div><div>+-----------------------------------+----------+</div><div>| Aborted_clients &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 0 &nbsp; &nbsp; &nbsp; &nbsp;|</div><div>| Aborted_connects &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp;|</div><div>| Binlog_cache_disk_use &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 0 &nbsp; &nbsp; &nbsp; &nbsp;|</div><div>| Binlog_cache_use &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 0 &nbsp; &nbsp; &nbsp; &nbsp;|</div><div>| Bytes_received &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 212 &nbsp; &nbsp; &nbsp;|</div><div>| Bytes_sent &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| 8431 &nbsp; &nbsp; |</div></div><div>〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜</div></blockquote><div><br /></div><div>show statusもlike句で絞り込めるので、欲しい情報だけを絞り込みたいときはlikeを使うのがよいでしょう。</div><div><br /></div><div><font class="Apple-style-span" style="font-size: 1.25em; ">3. テーブルやデータベースの状態を見る</font></div><div><br /></div><div>show databases; や show tables; 等で、データベースやテーブル一覧が見られますが、それらの状態を見るのにもshowコマンドを使います。</div><div><br /></div><div>例えばテーブルに対してどの程度ロックが掛かっているか、ロック待ちのスレッドがあるかなどを見るには show open tables; を使います。</div><div><br /></div><blockquote class="webkit-indent-blockquote" style="margin: 0 0 0 40px; border: none; padding: 0px;"><div><div>mysql&gt; show open tables;</div><div>+----------+--------------+--------+-------------+</div><div>| Database | Table &nbsp; &nbsp; &nbsp; &nbsp;| In_use | Name_locked |</div><div>+----------+--------------+--------+-------------+</div><div>| mysql &nbsp; &nbsp;| servers &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;0 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 |</div><div>| mysql &nbsp; &nbsp;| db &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;0 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 |</div><div>| mysql &nbsp; &nbsp;| host &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;0 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 |</div><div>| mysql &nbsp; &nbsp;| columns_priv | &nbsp; &nbsp; &nbsp;0 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 |</div><div>| mysql &nbsp; &nbsp;| user &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;0 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 |</div><div>| mysql &nbsp; &nbsp;| procs_priv &nbsp; | &nbsp; &nbsp; &nbsp;0 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 |</div><div>| mysql &nbsp; &nbsp;| event &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;0 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 |</div><div>| mysql &nbsp; &nbsp;| tables_priv &nbsp;| &nbsp; &nbsp; &nbsp;0 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 |</div><div>+----------+--------------+--------+-------------+</div><div>8 rows in set (0.00 sec)</div></div></blockquote><div><br /></div><div>In_use がテーブルに対してロックをかけている、あるいはロック待ちのスレッド数を、Name_lockedがテーブル名に対してロックが掛けられている数を示しています。</div><div><br /></div><div>他にも状態把握のためのshowコマンドはいろいろとあるので、状況に合わせて活用したいですね。</div><div><ul><li>show procedure status; # ストアドプロシージャの一覧</li><li>show triggers; # useしたデータベース内のトリガ一覧</li><li>show events; # useしたデータベース内のイベントスケジューラ用イベント一覧</li><li>などなど</li></ul></div><div><br /></div><div><meta charset="utf-8"><div><font class="Apple-style-span" style="font-size: 1.25em; ">4. テーブルの状態をもっと詳しく見る</font></div></div><div><br /></div><div>show table status; を用いると、もっと詳しいテーブルの状態を取得できます。</div><div><br /></div><blockquote class="webkit-indent-blockquote" style="margin: 0 0 0 40px; border: none; padding: 0px;"><div><div>mysql&gt; show table status like "mt_asset"\G</div><div>*************************** 1. row ***************************</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Name: mt_asset</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Engine: MyISAM</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;Version: 10</div><div>&nbsp;&nbsp; &nbsp; Row_format: Dynamic</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Rows: 1</div><div>&nbsp;Avg_row_length: 112</div><div>&nbsp;&nbsp; &nbsp;Data_length: 112</div><div>Max_data_length: 281474976710655</div><div>&nbsp;&nbsp; Index_length: 21504</div><div>&nbsp;&nbsp; &nbsp; &nbsp;Data_free: 0</div><div>&nbsp;Auto_increment: 2</div><div>&nbsp;&nbsp; &nbsp;Create_time: 2010-07-17 12:27:50</div><div>&nbsp;&nbsp; &nbsp;Update_time: 2010-07-17 18:22:17</div><div>&nbsp;&nbsp; &nbsp; Check_time: 2010-07-17 12:27:50</div><div>&nbsp;&nbsp; &nbsp; &nbsp;Collation: utf8_general_ci</div><div>&nbsp;&nbsp; &nbsp; &nbsp; Checksum: NULL</div><div>&nbsp;Create_options:&nbsp;</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;Comment:&nbsp;</div><div>1 row in set (0.02 sec)</div></div></blockquote><div><br /></div><div>Data_lengthやIndex_lengthは特にテーブルスペース消費状況やデータサイズを知るために重要な指標になるでしょう。</div><div>他には show columns; や show create table; で、カラム一覧やスキーマ定義を知る事ができます。</div><div><br /></div><blockquote class="webkit-indent-blockquote" style="margin: 0 0 0 40px; border: none; padding: 0px;"><div><div>mysql&gt; show columns from mt_asset;</div><div>+-------------------+--------------+------+-----+---------+----------------+</div><div>| Field &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Type &nbsp; &nbsp; &nbsp; &nbsp; | Null | Key | Default | Extra &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|</div><div>+-------------------+--------------+------+-----+---------+----------------+</div><div>| asset_id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| int(11) &nbsp; &nbsp; &nbsp;| NO &nbsp; | PRI | NULL &nbsp; &nbsp;| auto_increment |&nbsp;</div><div>| asset_blog_id &nbsp; &nbsp; | int(11) &nbsp; &nbsp; &nbsp;| NO &nbsp; | MUL | NULL &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;</div><div>| asset_class &nbsp; &nbsp; &nbsp; | varchar(255) | YES &nbsp;| MUL | file &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;</div><div>| asset_created_by &nbsp;| int(11) &nbsp; &nbsp; &nbsp;| YES &nbsp;| MUL | NULL &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;</div><div>| asset_created_on &nbsp;| datetime &nbsp; &nbsp; | YES &nbsp;| MUL | NULL &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;</div><div>| asset_description | mediumtext &nbsp; | YES &nbsp;| &nbsp; &nbsp; | NULL &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;</div><div>| asset_file_ext &nbsp; &nbsp;| varchar(20) &nbsp;| YES &nbsp;| MUL | NULL &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;</div><div>| asset_file_name &nbsp; | varchar(255) | YES &nbsp;| &nbsp; &nbsp; | NULL &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;</div><div>| asset_file_path &nbsp; | varchar(255) | YES &nbsp;| &nbsp; &nbsp; | NULL &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;</div><div>| asset_label &nbsp; &nbsp; &nbsp; | varchar(255) | YES &nbsp;| MUL | NULL &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;</div><div>| asset_mime_type &nbsp; | varchar(255) | YES &nbsp;| &nbsp; &nbsp; | NULL &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;</div><div>| asset_modified_by | int(11) &nbsp; &nbsp; &nbsp;| YES &nbsp;| &nbsp; &nbsp; | NULL &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;</div><div>| asset_modified_on | datetime &nbsp; &nbsp; | YES &nbsp;| &nbsp; &nbsp; | NULL &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;</div><div>| asset_parent &nbsp; &nbsp; &nbsp;| int(11) &nbsp; &nbsp; &nbsp;| YES &nbsp;| MUL | NULL &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;</div><div>| asset_url &nbsp; &nbsp; &nbsp; &nbsp; | varchar(255) | YES &nbsp;| &nbsp; &nbsp; | NULL &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;</div><div>+-------------------+--------------+------+-----+---------+----------------+</div><div>15 rows in set (0.02 sec)</div></div><div><br /></div><div><div>mysql&gt; show create table mt_asset\G</div><div>*************************** 1. row ***************************</div><div>&nbsp;&nbsp; &nbsp; &nbsp; Table: mt_asset</div><div>Create Table: CREATE TABLE `mt_asset` (</div><div>&nbsp;&nbsp;`asset_id` int(11) NOT NULL AUTO_INCREMENT,</div><div>&nbsp;&nbsp;`asset_blog_id` int(11) NOT NULL,</div><div>&nbsp;&nbsp;`asset_class` varchar(255) DEFAULT 'file',</div><div>&nbsp;&nbsp;`asset_created_by` int(11) DEFAULT NULL,</div><div>&nbsp;&nbsp;`asset_created_on` datetime DEFAULT NULL,</div><div>&nbsp;&nbsp;`asset_description` mediumtext,</div><div>&nbsp;&nbsp;`asset_file_ext` varchar(20) DEFAULT NULL,</div><div>&nbsp;&nbsp;`asset_file_name` varchar(255) DEFAULT NULL,</div><div>&nbsp;&nbsp;`asset_file_path` varchar(255) DEFAULT NULL,</div><div>&nbsp;&nbsp;`asset_label` varchar(255) DEFAULT NULL,</div><div>&nbsp;&nbsp;`asset_mime_type` varchar(255) DEFAULT NULL,</div><div>&nbsp;&nbsp;`asset_modified_by` int(11) DEFAULT NULL,</div><div>&nbsp;&nbsp;`asset_modified_on` datetime DEFAULT NULL,</div><div>&nbsp;&nbsp;`asset_parent` int(11) DEFAULT NULL,</div><div>&nbsp;&nbsp;`asset_url` varchar(255) DEFAULT NULL,</div><div>&nbsp;&nbsp;PRIMARY KEY (`asset_id`),</div><div>&nbsp;&nbsp;KEY `mt_asset_blog_class_date` (`asset_blog_id`,`asset_class`,`asset_created_on`),</div><div>&nbsp;&nbsp;KEY `mt_asset_parent` (`asset_parent`),</div><div>&nbsp;&nbsp;KEY `mt_asset_file_ext` (`asset_file_ext`),</div><div>&nbsp;&nbsp;KEY `mt_asset_created_on` (`asset_created_on`),</div><div>&nbsp;&nbsp;KEY `mt_asset_class` (`asset_class`),</div><div>&nbsp;&nbsp;KEY `mt_asset_label` (`asset_label`),</div><div>&nbsp;&nbsp;KEY `mt_asset_created_by` (`asset_created_by`)</div><div>) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8</div><div>1 row in set (0.02 sec)</div></div></blockquote><div><br /></div><div>他にも show grants; で権限を、 show master status; や show slave status; でレプリケーションの状態を取得するなど、showコマンドはMySQLの状態を多岐にわたって取得できるコマンドなので、必要なときにさっと必要な情報を取り出せるようになりたいところです。</div><div><br /></div><div><br /></div><div><br /></div>
+                                    </div>
+
+
+                                </div>
+                                <div class="asset-footer">
+
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>タグ<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=advent%20calendar&amp;limit=20';return false;" rel="tag">advent calendar</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=mysql&amp;limit=20';return false;" rel="tag">mysql</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    <div id="trackbacks" class="trackbacks">
+    <h2 class="trackbacks-header">トラックバック(0)</h2>
+
+    
+    
+    <div class="trackbacks-info">
+        <p>トラックバックURL: http://mysql-casual.org/cgi-bin/mt/mt-tb.cgi/16</p>
+    </div>
+    
+
+
+    
+    
+</div>
+
+
+                    <div id="comments" class="comments">
+
+
+    
+    
+    
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">コメントする</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://mysql-casual.org/cgi-bin/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="16" />
+                <input type="hidden" name="__lang" value="ja" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">名前</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">電子メール</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">ログイン情報を記憶</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">コメント
+                    (スタイル用のHTMLタグを使えます)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="プレビュー" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="投稿" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-search widget">
+    <h3 class="widget-header">検索</h3>
+    <div class="widget-content">
+        <form method="get" action="http://mysql-casual.org/cgi-bin/mt/mt-search.cgi">
+            <input type="text" id="search" class="ti" name="search" value="" />
+
+            <input type="hidden" name="IncludeBlogs" value="2" />
+
+            <input type="hidden" name="limit" value="20" />
+            <input type="submit" accesskey="4" value="検索" />
+        </form>
+    </div>
+</div>
+
+<div class="widget-archive widget-archive-category widget">
+    <h3 class="widget-header">カテゴリ</h3>
+    <div class="widget-content">
+    
+    </div>
+</div>
+
+
+
+
+    <div class="widget-archive-monthly widget-archive widget">
+    <h3 class="widget-header">月別 <a href="http://mysql-casual.org/archives.html">アーカイブ</a></h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://mysql-casual.org/2019/07/">2019年7月 (1)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/12/">2010年12月 (4)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/11/">2010年11月 (1)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/08/">2010年8月 (3)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/07/">2010年7月 (3)</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+
+
+<div class="widget-pages widget">
+    <h3 class="widget-header">ウェブページ</h3>
+    <div class="widget-content">
+        <ul>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://mysql-casual.org/mt-static/images/status_icons/feed.gif" alt="購読する" width="9" height="9" /> <a href="http://mysql-casual.org/atom.xml">このブログを購読</a></li>
+
+        </ul>
+    </div>
+</div>
+<div class="widget-openid widget">
+    <div class="widget-content">
+        <em><strong>OpenID</strong>対応しています</em>
+        <a href="http://www.movabletype.jp/openid/">OpenIDについて</a>
+    </div>
+</div>
+
+<div class="widget-powered widget">
+    <div class="widget-content">
+        <a href="http://www.sixapart.jp/movabletype/"><img src="http://mysql-casual.org/mt-static/images/bug-pbmt-white.png" alt="Powered by Movable Type 5.02" width="120" height="75" /></a>
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+            <div class="widget-powered widget">
+                <div class="widget-content">
+                    Powered by <a href="http://www.sixapart.jp/movabletype/">Movable Type</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

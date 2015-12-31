@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="Movable Type 5.02" />
+<link rel="stylesheet" href="http://mysql-casual.org/styles.css" type="text/css" />
+<link rel="start" href="http://mysql-casual.org/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://mysql-casual.org/atom.xml" />
+<script type="text/javascript" src="http://mysql-casual.org/mt.js"></script>
+
+
+    
+    <link rel="prev bookmark" href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-07.html" title="クエリの結果をHTMLで取る - MySQL Casual Advent Calendar 2010" />
+    <link rel="next bookmark" href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-09.html" title="InnoDBにおけるデータ保全とO_DIRECTのこと - MySQL Casual Advent Calendar 2010" />
+    <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-08.html"
+    trackback:ping="http://mysql-casual.org/cgi-bin/mt/mt-tb.cgi/24"
+    dc:title="同期I/OまたはO_DIRECTって何だ？ - MySQL Casual Advent Calendar 2010"
+    dc:identifier="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-08.html"
+    dc:subject=""
+    dc:description="sh2さんのエントリで、innodb_flush_methodについての話があり..."
+    dc:creator="myfinder"
+    dc:date="2010-12-08T00:00:00+09:00" />
+</rdf:RDF>
+-->
+
+    
+    <title>同期I/OまたはO_DIRECTって何だ？ - MySQL Casual Advent Calendar 2010 - MySQL Casual</title>
+</head>
+<body id="classic-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://mysql-casual.org/" accesskey="1">MySQL Casual</a></div>
+            <div id="header-description"></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-24" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">同期I/OまたはO_DIRECTって何だ？ - MySQL Casual Advent Calendar 2010</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            <span class="vcard author">myfinder</span> (<abbr class="published" title="2010-12-08T00:00:00+09:00">2010年12月 8日 00:00</abbr>)
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-08.html#comments">コメント(0)</a>
+
+
+                                        <span class="separator">|</span> <a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-08.html#trackbacks">トラックバック(0)</a>
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <a href="http://d.hatena.ne.jp/sh2/20101205">sh2さんのエントリ</a>で、innodb_flush_methodについての話があり、O_DIRECTの設定について調べた事のまとめ。<div><br /></div><div><ul><li><font class="Apple-style-span" style="font-size: 1.25em; ">システムコール</font></li></ul></div><div>ファイルを開く、などOSの機能(より低いレイヤ)を呼び出す際に使う関数で、MySQLがファイルを開いたりする時にも使われています。</div><div>O_DIRECTは、このシステムコールのopen()の動作に影響を与えるフラグで、ページキャッシュを経由しないで読み書きを行う動作になるフラグです。</div><div><br /></div><div><meta charset="utf-8"><div><ul style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.75em; margin-left: 20px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; font-weight: normal; list-style-type: disc; list-style-position: outside; list-style-image: initial; background-repeat: no-repeat repeat; "><li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; font-weight: normal; "><font class="Apple-style-span" size="3">同期I/O</font></li></ul></div></div><div>innodb_flush_methodは、基本的にどんな設定でも同期I/Oが使われます。</div><div>設定可能な値としてfdatasync, O_DSYNC, O_DIRECTの3つがあり、標準はfdatasyncが指定されるようです。</div><div><br /></div><div>どれも基本的には同期I/Oですが、それぞれで記憶媒体(ディスク等)への書き出す時の挙動が違っていて</div><div>&nbsp;- fdatasyncではfsyncがデバイスへの書き込みを</div><div>&nbsp;- O_DSYNCを使う場合はデバイスへの書き込みと付随するメタデータの書き込みを</div><div>&nbsp;- O_DIRECTを使う場合はダイレクトI/Oによってデバイスへ、ページキャッシュを経由しないで書き込みを</div><div>それぞれ行う。</div><div><br /></div><div><meta charset="utf-8"><div><div><ul style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.75em; margin-left: 20px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; font-weight: normal; list-style-type: disc; list-style-position: outside; list-style-image: initial; border-style: initial; border-color: initial; background-repeat: no-repeat repeat; "><li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; font-weight: normal; border-style: initial; border-color: initial; "><font class="Apple-style-span" size="3">O_DIRECT設定にした方がいいと言われる理由</font></li></ul></div></div></div><div>InnoDBは、独自にバッファプールを持っており、OSのページキャッシュを経由すると2重キャッシュになって無意味だ、という考え方のもと、O_DIRECTを指定するとよい、という風に言われています。</div><div>(<a href="http://www.amazon.co.jp/Linux-DB-%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E6%A7%8B%E7%AF%89-%E9%81%8B%E7%94%A8%E5%85%A5%E9%96%80-Magazine-SELECTION/dp/4798120723">この本</a>参照)</div><div><br /></div><div><meta charset="utf-8"><div><div><div><ul style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.75em; margin-left: 20px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; font-weight: normal; list-style-type: disc; list-style-position: outside; list-style-image: initial; border-style: initial; border-color: initial; border-style: initial; border-color: initial; background-repeat: no-repeat repeat; "><li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; font-weight: normal; border-style: initial; border-color: initial; border-style: initial; border-color: initial; "><font class="Apple-style-span" size="3">より安全な運用にしたい場合</font></li></ul></div></div></div></div><div>O_DIRECTはfsync相当のことをダイレクトI/Oでやるようなので、安全な書き込みという意味ではO_DSYNCを指定した方がよいのかなと思います。(ソースは追えてないので未検証)</div><div>また、書き込み方法以外にも、書き込みタイミングの指定がInnoDBの設定として存在していて、それはinnodb_flush_log_at_trx_commitという項目で、</div><div>&nbsp;- 0 : 毎秒</div><div>&nbsp;- 1 : commit毎</div><div>&nbsp;- 2 : ログファイルへの書き出し-&gt;毎秒, ディスクへの書き出し-&gt;commit毎</div><div>という挙動になるそうです。</div><div><br /></div><div>なので、データ保全という意味では、innodb_flush_methodをO_DSYNCに、innodb_flush_log_at_trx_commitを1に設定するのがよいのかなと考えられます。</div><div><br /></div><div><br /></div><meta charset="utf-8"><meta charset="utf-8"><div><br /></div><div><br /></div><div><br /></div>
+                                    </div>
+
+
+                                </div>
+                                <div class="asset-footer">
+
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>タグ<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=advent%20calendar&amp;limit=20';return false;" rel="tag">advent calendar</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=mysql&amp;limit=20';return false;" rel="tag">mysql</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    <div id="trackbacks" class="trackbacks">
+    <h2 class="trackbacks-header">トラックバック(0)</h2>
+
+    
+    
+    <div class="trackbacks-info">
+        <p>トラックバックURL: http://mysql-casual.org/cgi-bin/mt/mt-tb.cgi/24</p>
+    </div>
+    
+
+
+    
+    
+</div>
+
+
+                    <div id="comments" class="comments">
+
+
+    
+    
+    
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">コメントする</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://mysql-casual.org/cgi-bin/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="24" />
+                <input type="hidden" name="__lang" value="ja" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">名前</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">電子メール</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">ログイン情報を記憶</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">コメント
+                    (スタイル用のHTMLタグを使えます)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="プレビュー" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="投稿" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-search widget">
+    <h3 class="widget-header">検索</h3>
+    <div class="widget-content">
+        <form method="get" action="http://mysql-casual.org/cgi-bin/mt/mt-search.cgi">
+            <input type="text" id="search" class="ti" name="search" value="" />
+
+            <input type="hidden" name="IncludeBlogs" value="2" />
+
+            <input type="hidden" name="limit" value="20" />
+            <input type="submit" accesskey="4" value="検索" />
+        </form>
+    </div>
+</div>
+
+<div class="widget-archive widget-archive-category widget">
+    <h3 class="widget-header">カテゴリ</h3>
+    <div class="widget-content">
+    
+    </div>
+</div>
+
+
+
+
+    <div class="widget-archive-monthly widget-archive widget">
+    <h3 class="widget-header">月別 <a href="http://mysql-casual.org/archives.html">アーカイブ</a></h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://mysql-casual.org/2019/07/">2019年7月 (1)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/12/">2010年12月 (10)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/11/">2010年11月 (1)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/08/">2010年8月 (3)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/07/">2010年7月 (3)</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+
+
+<div class="widget-pages widget">
+    <h3 class="widget-header">ウェブページ</h3>
+    <div class="widget-content">
+        <ul>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://mysql-casual.org/mt-static/images/status_icons/feed.gif" alt="購読する" width="9" height="9" /> <a href="http://mysql-casual.org/atom.xml">このブログを購読</a></li>
+
+        </ul>
+    </div>
+</div>
+<div class="widget-openid widget">
+    <div class="widget-content">
+        <em><strong>OpenID</strong>対応しています</em>
+        <a href="http://www.movabletype.jp/openid/">OpenIDについて</a>
+    </div>
+</div>
+
+<div class="widget-powered widget">
+    <div class="widget-content">
+        <a href="http://www.sixapart.jp/movabletype/"><img src="http://mysql-casual.org/mt-static/images/bug-pbmt-white.png" alt="Powered by Movable Type 5.02" width="120" height="75" /></a>
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+            <div class="widget-powered widget">
+                <div class="widget-content">
+                    Powered by <a href="http://www.sixapart.jp/movabletype/">Movable Type</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

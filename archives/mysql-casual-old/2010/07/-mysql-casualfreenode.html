@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="Movable Type 5.02" />
+<link rel="stylesheet" href="http://mysql-casual.org/styles.css" type="text/css" />
+<link rel="start" href="http://mysql-casual.org/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://mysql-casual.org/atom.xml" />
+<script type="text/javascript" src="http://mysql-casual.org/mt.js"></script>
+
+
+    
+    
+    <link rel="next bookmark" href="http://mysql-casual.org/2010/07/-mysql-casualfreenode-1.html" title="今日の #mysql-casual@freenode" />
+    <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://mysql-casual.org/2010/07/-mysql-casualfreenode.html"
+    trackback:ping="http://mysql-casual.org/cgi-bin/mt/mt-tb.cgi/6"
+    dc:title="今日の #mysql-casual@freenode"
+    dc:identifier="http://mysql-casual.org/2010/07/-mysql-casualfreenode.html"
+    dc:subject=""
+    dc:description="&amp;nbsp;kamipo: こんにちはこんにちは！&amp;nbsp;こんにちはこんにち..."
+    dc:creator="myfinder"
+    dc:date="2010-07-21T01:17:39+09:00" />
+</rdf:RDF>
+-->
+
+    
+    <title>今日の #mysql-casual@freenode - MySQL Casual</title>
+</head>
+<body id="classic-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://mysql-casual.org/" accesskey="1">MySQL Casual</a></div>
+            <div id="header-description"></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-6" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">今日の #mysql-casual@freenode</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            <span class="vcard author">myfinder</span> (<abbr class="published" title="2010-07-21T01:17:39+09:00">2010年7月21日 01:17</abbr>)
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://mysql-casual.org/2010/07/-mysql-casualfreenode.html#comments">コメント(0)</a>
+
+
+                                        <span class="separator">|</span> <a href="http://mysql-casual.org/2010/07/-mysql-casualfreenode.html#trackbacks">トラックバック(0)</a>
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <i>&nbsp;kamipo: こんにちはこんにちは！<br />&nbsp;こんにちはこんにちは！<br />&nbsp;Casual MySQL始めま[す|した]<br />&nbsp;ずっと PostgreSQL 派だったので Casual Talks 期待してます！<br />&nbsp;craftworksさんPostgreSQL派だったんですね。<br />&nbsp;僕は1.5年前に卒業しました(仕事的な意味で<br />&nbsp;僕は多分卒業3年位前？<br />&nbsp;今ちょうど調べものしてるので質問させてください<br />&nbsp;SQL_CALC_FOUND_ROWS が死ぬほど遅いんですけど<br />&nbsp;count(*) で2回クエリ投げた方が速いという<br />&nbsp;InnoDB<br />&nbsp;http://blog.riywo.com/2010/07/18/164323 <br />&nbsp;今このエントリに気づいたw<br />&nbsp;ごめんなさいごめんなさい＞＜<br />&nbsp;生粋のMySQLっ子です　キリッ☆<br />&nbsp;ｗ<br />&nbsp;リファレンス読み中<br />&nbsp;calc_found_rowsは遅いですね。<br />&nbsp;みなさん普段どうしてるんですか？同じクエリで count(*)？<br />&nbsp;calc_found_rowsこないだ問題になってたな〜<br />&nbsp;FORCE INDEX で解決できるのかな<br />&nbsp;myfinder: その問題はどう解決したんですか？<br />&nbsp;calc_found_rowsは社内で一時期問題になって置き換えた記憶。<br />&nbsp;count(*)とかで置き換えたのかな。<br />&nbsp;後で思い出しますが多分そうですね〜<br />&nbsp;こんなエントリありました<br />&nbsp;http://www.mysqlperformanceblog.com/2007/08/28/to-sql_calc_found_rows-or-not-to-sql_calc_found_rows/<br />&nbsp;おぉ<br />&nbsp;SQL_CALC_FOUND_ROWS<br />&nbsp;おそいすなー<br />&nbsp;結構つかってるけど<br />&nbsp;xaicron: 外すと速くなります？<br />&nbsp;クエリーによりますね<br />&nbsp;結構というか毎クエリくらいで使ってるんですけど、あるクエリだけ極端に遅くなるんですよね<br />&nbsp;あまりに巨大なやつは、ほかのワーカーとかで件数を集めといて、そっちを使うようにしたりかしてます<br />&nbsp;あー<br />&nbsp;データによって<br />&nbsp;なぜか使われる　index が変わって<br />&nbsp;だから最初クエリが遅い原因が、SQL_CALC_FOUND_ROWS だって全然気付かなかったです<br />&nbsp;ファイルソートになったりとか<br />&nbsp;force index するとかで改善されたりしないかな。。<br />&nbsp;EXPLAIN すると、Using Index, Using Whereなんですけどね<br />&nbsp;一回、本番環境とステージで EXPLAIN の結果が違ったことがありましたなー<br />&nbsp;データ量で tukau <br />&nbsp;使う index が変わるとか<br />&nbsp;FORCE INDEX ( PRIMARY ) しても変化なし<br />&nbsp;mysql の オプチマイザーひどい＞＜<br />&nbsp;count(*) 2回より遅いってのは<br />&nbsp;ひどいですなー<br />&nbsp;まぁ、SQL_CALC_FOUND_ROWS<br />&nbsp;基本的には遅いですよね<br />&nbsp;mysql のバージョンアップしたら改善されんのかな<br />&nbsp;結局<br />&nbsp;全部なめないといけないですからねー<br />&nbsp;このIRCのログをmysql-casual.orgに貼付けてOKですか？<br />&nbsp;そんなのあるのｗ<br />&nbsp;毎日postするとかして公開したらおもしろいかなーとか思って。<br />&nbsp;良いですよ<br />&nbsp;craftworksさんありがとうございます。<br />&nbsp;http://dev.mysql.com/doc/refman/5.1/ja/information-functions.html#function_found-rows<br />&nbsp;にも特に有力な情報なし<br />&nbsp;データ量に比例して遅くなるのは遅くなると思います<br />&nbsp;こんなのも発見<br />&nbsp;http://twitter.com/zigorou/status/14755495751<br />&nbsp;ただ、 count(*) より遅いのはなぞ<br />&nbsp;そうなんですよね<br />&nbsp;やっぱり使われる index がその特定の query だけ変わってるとかな気がしますなー<br />&nbsp;どうしたもんかな<br />&nbsp;結果件数は絶対必要だし<br />&nbsp;ctoun(*) って必ず index 使われるんだった気がしますな<br />&nbsp;FORCE INDEX をつけてみて、だめそうなら別の原因とかですかね<br />&nbsp;まぁ count(*) の法が早いなら、 txn 内で 2回 SELECT するのもありかと思います<br />&nbsp;ただ、そのSELECTの間に書き込まれると、件数が多少ぶれますが<br />(#mysql-casual@freenode:xaicron) という素人意見<br />&nbsp;厳密に取得した行数とcountの数が合ってないといけない、という場合って実はあまりないんじゃないか説。<br />&nbsp;まぁほぼないですね<br />&nbsp;厳密である必要は全くないですね<br />&nbsp;でも count(*) も速い訳じゃないからどうしようもない<br />&nbsp;でもワーカーにやらせといて後から取得とかも死ぬほど面倒臭い<br />&nbsp;となると、定期的に行数を取ってどっかに保存しておくワーカーを走らせるという、さっき出た手はどうでしょ。<br />&nbsp;行数が必要であればそっちから取得する、と。<br />&nbsp;飛ばすクエリが検索系なのでめちゃ種類多いんですよね<br />&nbsp;検索画面系<br />&nbsp;動的に WHERE と ORDER BY を組み立てる系<br />&nbsp;http://d.hatena.ne.jp/ilo/20081119/1227092450<br />&nbsp;これコメントにSQL_CALC_FOUND_ROWSの方が速かったって書いてるけど僅差なんでしょうね<br /><br /></i> 
+                                    </div>
+
+
+                                </div>
+                                <div class="asset-footer">
+
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>タグ<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=FORCE%20INDEX&amp;limit=20';return false;" rel="tag">FORCE INDEX</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=irc&amp;limit=20';return false;" rel="tag">irc</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=mysql&amp;limit=20';return false;" rel="tag">mysql</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=SQL_CALC_FOUND_ROWS&amp;limit=20';return false;" rel="tag">SQL_CALC_FOUND_ROWS</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    <div id="trackbacks" class="trackbacks">
+    <h2 class="trackbacks-header">トラックバック(0)</h2>
+
+    
+    
+    <div class="trackbacks-info">
+        <p>トラックバックURL: http://mysql-casual.org/cgi-bin/mt/mt-tb.cgi/6</p>
+    </div>
+    
+
+
+    
+    
+</div>
+
+
+                    <div id="comments" class="comments">
+
+
+    
+    
+    
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">コメントする</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://mysql-casual.org/cgi-bin/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="6" />
+                <input type="hidden" name="__lang" value="ja" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">名前</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">電子メール</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">ログイン情報を記憶</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">コメント
+                    (スタイル用のHTMLタグを使えます)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="プレビュー" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="投稿" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-search widget">
+    <h3 class="widget-header">検索</h3>
+    <div class="widget-content">
+        <form method="get" action="http://mysql-casual.org/cgi-bin/mt/mt-search.cgi">
+            <input type="text" id="search" class="ti" name="search" value="" />
+
+            <input type="hidden" name="IncludeBlogs" value="2" />
+
+            <input type="hidden" name="limit" value="20" />
+            <input type="submit" accesskey="4" value="検索" />
+        </form>
+    </div>
+</div>
+
+<div class="widget-archive widget-archive-category widget">
+    <h3 class="widget-header">カテゴリ</h3>
+    <div class="widget-content">
+    
+    </div>
+</div>
+
+
+
+
+    <div class="widget-archive-monthly widget-archive widget">
+    <h3 class="widget-header">月別 <a href="http://mysql-casual.org/archives.html">アーカイブ</a></h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://mysql-casual.org/2019/07/">2019年7月 (1)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/07/">2010年7月 (2)</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+
+
+<div class="widget-pages widget">
+    <h3 class="widget-header">ウェブページ</h3>
+    <div class="widget-content">
+        <ul>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://mysql-casual.org/mt-static/images/status_icons/feed.gif" alt="購読する" width="9" height="9" /> <a href="http://mysql-casual.org/atom.xml">このブログを購読</a></li>
+
+        </ul>
+    </div>
+</div>
+<div class="widget-powered widget">
+    <div class="widget-content">
+        <a href="http://www.sixapart.jp/movabletype/"><img src="http://mysql-casual.org/mt-static/images/bug-pbmt-white.png" alt="Powered by Movable Type 5.02" width="120" height="75" /></a>
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+            <div class="widget-powered widget">
+                <div class="widget-content">
+                    Powered by <a href="http://www.sixapart.jp/movabletype/">Movable Type</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

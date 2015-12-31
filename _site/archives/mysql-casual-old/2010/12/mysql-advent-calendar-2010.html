@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="Movable Type 5.02" />
+<link rel="stylesheet" href="http://mysql-casual.org/styles.css" type="text/css" />
+<link rel="start" href="http://mysql-casual.org/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://mysql-casual.org/atom.xml" />
+<script type="text/javascript" src="http://mysql-casual.org/mt.js"></script>
+
+
+    
+    <link rel="prev bookmark" href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-25.html" title="MySQLのビルドオプションを後から知りたいとき - MySQL Casual Advent Calendar 2010" />
+    <link rel="next bookmark" href="http://mysql-casual.org/2011/07/mysql-casual-talks-vol2.html" title="MySQL Casual Talks Vol.2 開催します" />
+    <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://mysql-casual.org/2010/12/mysql-advent-calendar-2010.html"
+    trackback:ping="http://mysql-casual.org/cgi-bin/mt/mt-tb.cgi/14"
+    dc:title="MySQL Casual Advent Calendar 2010"
+    dc:identifier="http://mysql-casual.org/2010/12/mysql-advent-calendar-2010.html"
+    dc:subject=""
+    dc:description="こんにちはこんにちは！各プログラミング言語のAdvent Calendarが盛り..."
+    dc:creator="myfinder"
+    dc:date="2010-12-25T00:00:01+09:00" />
+</rdf:RDF>
+-->
+
+    
+    <title>MySQL Casual Advent Calendar 2010 - MySQL Casual</title>
+</head>
+<body id="classic-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://mysql-casual.org/" accesskey="1">MySQL Casual</a></div>
+            <div id="header-description"></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-14" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">MySQL Casual Advent Calendar 2010</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            <span class="vcard author">myfinder</span> (<abbr class="published" title="2010-12-25T00:00:01+09:00">2010年12月25日 00:00</abbr>)
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://mysql-casual.org/2010/12/mysql-advent-calendar-2010.html#comments">コメント(0)</a>
+
+
+                                        <span class="separator">|</span> <a href="http://mysql-casual.org/2010/12/mysql-advent-calendar-2010.html#trackbacks">トラックバック(0)</a>
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        こんにちはこんにちは！<div><br /></div><div><a href="http://gihyo.jp/news/info/2010/12/0102">各プログラミング言語のAdvent Calendar</a>が盛り上がってきているところですが、MySQLのAdvent Calendarがあってもいいじゃないかと思い立ってチャレンジすることにしました。</div><div><br /></div><meta charset="utf-8"><div>今更聞けないような事や、ちょっとした疑問を共有したりするために始めたMySQL Casualですので、ｽｰﾊﾟｰﾊｶｰの方から見たら「おいおいそんな事も知らないのかよ」とか「それは違うよ」というような内容もあるかもしれませんが、そういう時にはご指摘いただけると広く知識を共有できるので大変ありがたく思います。</div><div><br /></div><div>記事の前提となる環境は特に断りがない場合下記だと思ってください。</div><div><br /></div><div>OS: MacOSX Snow Leopard or CentOS5</div><div>Package:&nbsp;mysql-5.1.53-osx10.6-x86_64.dmg or&nbsp;MySQL-server-5.1.53-1.glibc23.x86_64.rpm</div><div><br /></div><div>環境の違いで変わる点についてはそれほど詳しくないので、ご存知の方は是非つっこみをいただけるとありがたいです。</div><div><br /></div><div>これから下記に、1日1本記事を書いたらリンクを張って行きます。</div><div><br /></div><div><div><ul><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-01.html">2010-12-01(水)</a>&nbsp;mysqld_safeって何だ</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-02.html">2010-12-02(木)</a> showコマンド</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-03.html">2010-12-03(金)</a> ユーザ設定入門<br /></li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-04.html">2010-12-04(土)</a>&nbsp;old_passwordsオプション</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-05.html">2010-12-05(日)</a>&nbsp;show profileでフェーズごとの実行時間を見る</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-06.html">2010-12-06(月)</a>&nbsp;コマンドプロンプト表示をカスタマイズ</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-07.html">2010-12-07(火)</a>&nbsp;クエリの結果をHTMLで取る</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-08.html">2010-12-08(水)</a>&nbsp;同期I/OまたはO_DIRECTって何だ？</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-09.html">2010-12-09(木)</a>&nbsp;InnoDBにおけるデータ保全とO_DIRECTのこと</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-10.html">2010-12-10(金)</a>&nbsp;クエリログを吐かせたくないけど実行されているクエリを追いたいとき</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-11.html">2010-12-11(土)</a>&nbsp;MySQL Casual Talks Vol.1 開催です</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-12.html">2010-12-12(日)</a>&nbsp;MySQL Casual Talks Vol.1 開催報告</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-13.html">2010-12-13(月)</a>&nbsp;クエリログもバイナリログも吐いてないけど実行されているクエリを追いたいとき</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-14.html">2010-12-14(火)</a>&nbsp;rootのパスワードを忘れてしまったら</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-15.html">2010-12-15(水)</a>&nbsp;AUTOCOMMITを常にOFFする</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-16.html">2010-12-16(木)</a>&nbsp;テーブルのデータとインデックスのサイズを知りたいとき</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-17.html">2010-12-17(金)</a>&nbsp;fdatasyncとO_DSYNC</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-18.html">2010-12-18(土)</a>&nbsp;古いバージョンのMySQLが欲しいとき</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-19.html">2010-12-19(日)</a>&nbsp;Q4Mの自動compactionが効いていないときの対応</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-20.html">2010-12-20(月)</a>&nbsp;レプリケーション対象を絞りたいとき</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-21.html">2010-12-21(火)</a>&nbsp;auto_incrementでマスタ分割をがんばりたいとき</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-22.html">2010-12-22(水)</a>&nbsp;mysqlslapでさくっと性能を確かめる</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-23.html">2010-12-23(木)</a>&nbsp;リモートのMySQLの出力結果を加工したい</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-24.html">2010-12-24(金)</a>&nbsp;datediffについて</li><li><a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-25.html">2010-12-25(土)</a>&nbsp;MySQLのビルドオプションを後から知りたいとき</li></ul></div></div><div><br /></div><div>はたして25本続けられるのでしょうか。</div><div>がんばってみます。</div>
+                                    </div>
+
+
+                                </div>
+                                <div class="asset-footer">
+
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>タグ<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=advent%20calendar&amp;limit=20';return false;" rel="tag">advent calendar</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=mysql&amp;limit=20';return false;" rel="tag">mysql</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=mysql-casual&amp;limit=20';return false;" rel="tag">mysql-casual</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    <div id="trackbacks" class="trackbacks">
+    <h2 class="trackbacks-header">トラックバック(0)</h2>
+
+    
+    
+    <div class="trackbacks-info">
+        <p>トラックバックURL: http://mysql-casual.org/cgi-bin/mt/mt-tb.cgi/14</p>
+    </div>
+    
+
+
+    
+    
+</div>
+
+
+                    <div id="comments" class="comments">
+
+
+    
+    
+    
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">コメントする</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://mysql-casual.org/cgi-bin/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="14" />
+                <input type="hidden" name="__lang" value="ja" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">名前</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">電子メール</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">ログイン情報を記憶</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">コメント
+                    (スタイル用のHTMLタグを使えます)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="プレビュー" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="投稿" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-search widget">
+    <h3 class="widget-header">検索</h3>
+    <div class="widget-content">
+        <form method="get" action="http://mysql-casual.org/cgi-bin/mt/mt-search.cgi">
+            <input type="text" id="search" class="ti" name="search" value="" />
+
+            <input type="hidden" name="IncludeBlogs" value="2" />
+
+            <input type="hidden" name="limit" value="20" />
+            <input type="submit" accesskey="4" value="検索" />
+        </form>
+    </div>
+</div>
+
+<div class="widget-archive widget-archive-category widget">
+    <h3 class="widget-header">カテゴリ</h3>
+    <div class="widget-content">
+    
+    </div>
+</div>
+
+
+
+
+    <div class="widget-archive-monthly widget-archive widget">
+    <h3 class="widget-header">月別 <a href="http://mysql-casual.org/archives.html">アーカイブ</a></h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://mysql-casual.org/2019/07/">2019年7月 (1)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2011/07/">2011年7月 (1)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/12/">2010年12月 (26)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/11/">2010年11月 (1)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/08/">2010年8月 (3)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/07/">2010年7月 (3)</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+
+
+<div class="widget-pages widget">
+    <h3 class="widget-header">ウェブページ</h3>
+    <div class="widget-content">
+        <ul>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://mysql-casual.org/mt-static/images/status_icons/feed.gif" alt="購読する" width="9" height="9" /> <a href="http://mysql-casual.org/atom.xml">このブログを購読</a></li>
+
+        </ul>
+    </div>
+</div>
+<div class="widget-openid widget">
+    <div class="widget-content">
+        <em><strong>OpenID</strong>対応しています</em>
+        <a href="http://www.movabletype.jp/openid/">OpenIDについて</a>
+    </div>
+</div>
+
+<div class="widget-powered widget">
+    <div class="widget-content">
+        <a href="http://www.sixapart.jp/movabletype/"><img src="http://mysql-casual.org/mt-static/images/bug-pbmt-white.png" alt="Powered by Movable Type 5.02" width="120" height="75" /></a>
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+            <div class="widget-powered widget">
+                <div class="widget-content">
+                    Powered by <a href="http://www.sixapart.jp/movabletype/">Movable Type</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

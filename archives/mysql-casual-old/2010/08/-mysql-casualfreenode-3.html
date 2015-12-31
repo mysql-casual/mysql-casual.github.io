@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="Movable Type 5.02" />
+<link rel="stylesheet" href="http://mysql-casual.org/styles.css" type="text/css" />
+<link rel="start" href="http://mysql-casual.org/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://mysql-casual.org/atom.xml" />
+<script type="text/javascript" src="http://mysql-casual.org/mt.js"></script>
+
+
+    
+    <link rel="prev bookmark" href="http://mysql-casual.org/2010/07/-mysql-casualfreenode-2.html" title="今日の #mysql-casual@freenode" />
+    <link rel="next bookmark" href="http://mysql-casual.org/2010/08/mysql-casualfreenode.html" title="週末の#mysql-casual@freenode" />
+    <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://mysql-casual.org/2010/08/-mysql-casualfreenode-3.html"
+    trackback:ping="http://mysql-casual.org/cgi-bin/mt/mt-tb.cgi/10"
+    dc:title="最近の #mysql-casual@freenode"
+    dc:identifier="http://mysql-casual.org/2010/08/-mysql-casualfreenode-3.html"
+    dc:subject=""
+    dc:description="&amp;gt;#mysql-casual@freenode:myfinder&amp;lt; ..."
+    dc:creator="myfinder"
+    dc:date="2010-08-21T23:53:05+09:00" />
+</rdf:RDF>
+-->
+
+    
+    <title>最近の #mysql-casual@freenode - MySQL Casual</title>
+</head>
+<body id="classic-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://mysql-casual.org/" accesskey="1">MySQL Casual</a></div>
+            <div id="header-description"></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-10" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">最近の #mysql-casual@freenode</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            <span class="vcard author">myfinder</span> (<abbr class="published" title="2010-08-21T23:53:05+09:00">2010年8月21日 23:53</abbr>)
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://mysql-casual.org/2010/08/-mysql-casualfreenode-3.html#comments">コメント(0)</a>
+
+
+                                        <span class="separator">|</span> <a href="http://mysql-casual.org/2010/08/-mysql-casualfreenode-3.html#trackbacks">トラックバック(0)</a>
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <i>&gt;#mysql-casual@freenode:myfinder&lt; http://d.hatena.ne.jp/hirose31/20100517/1274094712<br />&gt;#mysql-casual@freenode:myfinder&lt; いまこれ読みながらチューニングについて本気出して考えてみてる<br />&gt;#mysql-casual@freenode:myfinder&lt; craftworks: どうもカラムをたくさん指定するとSQL_CALC_FOUND_ROWSは遅くなるようです。11:51:34 &gt;#mysql-casual@freenode:myfinder&lt; http://nippondanji.blogspot.com/2010/07/mysql.html<br />&gt;#mysql-casual@freenode:myfinder&lt; これはなかなかいいですね。<br />&lt;#mysql-casual@freenode:riywo&gt; 行けなかったんですが、このスライドはさすがに熱い。http://www.slideshare.net/nippondanji/art-of-mysql-replication-4824469<br />&lt;#mysql-casual@freenode:riywo&gt; Xidが特に熱い。<br />&lt;#mysql-casual@freenode:riywo&gt; やっぱMySQLの人気を支えるのは今も昔もレプリケーションなんだなぁ。<br />&gt;#mysql-casual@freenode:myfinder&lt; PostgreSQLと差がついたのはいつ頃だったか。<br />&lt;#mysql-casual@freenode:riywo&gt; ポスグレ全く触ったことないです。<br />&lt;#mysql-casual@freenode:riywo&gt; binlog見てにやにやしてます。変態ですね。<br />&gt;#mysql-casual@freenode:myfinder&lt; mysql-hentai.orgを取ればいいんですか。<br />&lt;#mysql-casual@freenode:riywo&gt; いやんw<br />&gt;#mysql-casual@freenode:myfinder&lt; SQL_CALC_FOUND_ROWSやめたらLoadがものすごい下がったでござるの巻<br />&lt;#mysql-casual@freenode:craftworks&gt; ｗ<br />&lt;#mysql-casual@freenode:craftworks&gt; 件数の取得の代替手段はどうしました？<br />&lt;#mysql-casual@freenode:craftworks&gt; あとパーティショニング使っても SQL_CALC_FOUND＿ROWS 速くなる気がします<br />&gt;#mysql-casual@freenode:myfinder&lt; countにしたようです。<br />&lt;#mysql-casual@freenode:craftworks&gt; count もう1回投げた方が速いと？バッチでキャッシュとかじゃなくてですか？<br />&lt;#mysql-casual@freenode:craftworks&gt; Spider ってテーブル分割して負荷分散できるけど、分割先で更に更新系と参照系と振り分けたりできるのかな<br />&lt;#mysql-casual@freenode:riywo_&gt; partition使ってるだけだったような記憶があるので、やるなら更新用のspiderと参照用のspiderを準備する、とかですかね。適当に言ってますが。<br />&lt;#mysql-casual@freenode:craftworks&gt; クエリによって振り分けとかはできないっぽいですよね<br />&lt;#mysql-casual@freenode:craftworks&gt; リンク先に MySQL Proxy 置くとかですかね<br />&lt;#mysql-casual@freenode:kamipo&gt; データノードをレプリケーションさせておいて、更新用と参照用のengine=spiderなテーブルを作れば可能だと思いますが<br />&lt;#mysql-casual@freenode:kamipo&gt; あんまりいけてない気もしますね<br />&lt;#mysql-casual@freenode:riywo_&gt; ですね。そいういう感じになりますよね。<br />&lt;#mysql-casual@freenode:craftworks&gt; 更新用と参照用でテーブルを分けるということですか<br />&lt;#mysql-casual@freenode:kamipo&gt; 今いった方法だとそういう感じです<br />&lt;#mysql-casual@freenode:craftworks&gt; Engine=spider なテーブルを複数作るけど、参照先のテーブル名は一緒で、サーバーが違うということですね<br />&lt;#mysql-casual@freenode:craftworks&gt; 管理が煩雑になりそうですね<br />&lt;#mysql-casual@freenode:kamipo&gt; なりそうですね...！<br />&lt;#mysql-casual@freenode:kamipo&gt; なのであんまりいけてなさそうです<br />&lt;#mysql-casual@freenode:craftworks&gt; アプリケーション側では単一の接続先だけ知っていれば良いようにしたいですよね。実現すればどれだけ幸せか。<br />&lt;#mysql-casual@freenode:craftworks&gt; Spider 使う場合は、スケールアウトじゃなくてスケールアップ前提なんですかね。基本<br />&lt;#mysql-casual@freenode:craftworks&gt; 更新と参照は分け無いのかな<br />&lt;#mysql-casual@freenode:kamipo&gt; どうなんでしょう、個人的にはshardingすれば更新先と参照先を分ける必要性が少なくなっていくのと、必要がないなら更新と参照で接続先を変えたくないとは思ってますね<br />&lt;#mysql-casual@freenode:craftworks&gt; やっぱり、「分割によって更新参照分ける必要なくなるよ！」っていうコンセプトなんですかね<br />&lt;#mysql-casual@freenode:craftworks&gt; スライドとかの実績紹介見てるとそうなんでしょうね<br />&lt;#mysql-casual@freenode:craftworks&gt; まだそんなパファーマンス気にしないといけないサービス作れてませんが＞＜<br />&lt;#mysql-casual@freenode:kamipo&gt; シングルマスターな構成だと、参照系はスレーブ並べてスケールできますが更新系クエリの絶対数がマスターの更新性能で限界になるのを<br />&lt;#mysql-casual@freenode:kamipo&gt; spiderみたいにshardingすれば更新系も参照系もスケールするので<br />&lt;#mysql-casual@freenode:kamipo&gt; クエリによって参照先を変える必要はなくなるかなーと思ってます<br />&lt;#mysql-casual@freenode:craftworks&gt; 単純に分割すればするだけ分散されますもんね<br />&gt;#mysql-casual@freenode:myfinder&lt; 第1回ちゃらいMySQL勉強会まだ？<br />&gt;#mysql-casual@freenode:myfinder&lt; http://twitter.com/Yappo/status/19792856181<br />&gt;#mysql-casual@freenode:myfinder&lt; MySQLやってるとモテないのか！！！１１<br />&lt;#mysql-casual@freenode:sugyan&gt; 「カジュアルならモテる」とか何か逃げ道を！<br />&lt;#mysql-casual@freenode:kamipo&gt; MySQLやってても全くモテないが、VBAやってるバイトはモテまくりである<br />&lt;#mysql-casual@freenode:kamipo&gt; ギリギリギリ...<br />&lt;#mysql-casual@freenode:sugyan&gt; ｗｗ<br />&lt;#mysql-casual@freenode:riywo_&gt; DBAはモテないのにVBAはモテるんですか。<br />&lt;#mysql-casual@freenode:craftworks&gt; ちゃらいMySQLってどんな SQL 書いたらなれますか？<br />&gt;#mysql-casual@freenode:myfinder&lt; explainすると「Using filesort」とか出ちゃうクエリ。<br />&lt;#mysql-casual@freenode:craftworks&gt; テーブルは全てやり捨てテンポラリテーブルとか？<br />&gt;#mysql-casual@freenode:myfinder&lt; そもそもモテないからINSERT権限どころかSELECTの権限すら付与されてない可能性が高い。<br />&lt;#mysql-casual@freenode:riywo_&gt; うはw<br />&gt;#mysql-casual@freenode:myfinder&lt; 誰かGRANTしてください＞＜<br />&lt;#mysql-casual@freenode:craftworks&gt; うまいｗｗｗ<br />&lt;#mysql-casual@freenode:riywo_&gt; これは秀逸ですね　myfinder++<br />#mysql-casual@freenode:myfinder( こんなこと言ってるからモテないんだよ！！！<br />&lt;#mysql-casual@freenode:sugyan&gt; っっw<br />&lt;#mysql-casual@freenode:riywo_&gt; nippondanjiさんのスライド見て、複数slaveのrelay-logでXidの場所を調べるスクリプトとか書いてみた。Xidすばらしいですね。<br />&gt;#mysql-casual@freenode:myfinder&lt; どこかに晒してください。<br />&lt;#mysql-casual@freenode:craftworks&gt; mysql のデータって OS のキャッシュに載せた方が良いといいますが、innodb_buffer_pool_size を大きく取ると、OS のメモリバッファって減りますよね<br />&lt;#mysql-casual@freenode:craftworks&gt; ということは、innodb_buffer_pool_size は小さくして OS のメモリバッファをなるべく残しておいた方が良いってことなんですかね<br />&lt;#mysql-casual@freenode:riywo_&gt; あれ、buffer_poolに乗せた方がいい、ってのが良く言われるのではないでしょうか。<br />&lt;#mysql-casual@freenode:craftworks&gt; http://d.hatena.ne.jp/naoya/20070521/1179754203<br />&lt;#mysql-casual@freenode:craftworks&gt; cat read とかして、ページキャッシュに読み込むのって、innodb_buffer_pool_size とは関係ない部分ですよね多分<br />&lt;#mysql-casual@freenode:riywo_&gt; buffer_poolを広げて、O_DIRECTして、vm.swappiness=0、ってのが流行りかと思ってました．<br />&lt;#mysql-casual@freenode:craftworks&gt; 流行りとか分かりません＞＜ごめんなさいごめんなさい<br />&lt;#mysql-casual@freenode:riywo_&gt; matsunobuさんの受け売りです＞＜すみませんすみません<br />&lt;#mysql-casual@freenode:craftworks&gt; Facebook の&nbsp; InnoDB plugin+XFS+deadline+vm.swappiness=0 ってやつですか<br />&lt;#mysql-casual@freenode:kamipo&gt; innodbはOSでバッファリングせずにinnodb_buffer_poolに乗せるのが良いらしくて<br />&lt;#mysql-casual@freenode:riywo_&gt; ですです。カンファレンスで言ってたやつです。<br />&lt;#mysql-casual@freenode:craftworks&gt; ほう<br />&lt;#mysql-casual@freenode:craftworks&gt; 今新規にDBサーバーセットアップしてて<br />&lt;#mysql-casual@freenode:craftworks&gt; my.cnf 設定中です<br />&lt;#mysql-casual@freenode:kamipo&gt; うちはレガシーシステムでmyisamなテーブルが結構あるので、そっちはOSでバッファに乗せるかmyisam_use_mmapしてます<br />&lt;#mysql-casual@freenode:craftworks&gt; MyISAM はページキャッシュの方が良いんですね<br />&lt;#mysql-casual@freenode:riywo_&gt; MyISAMならそうでしょうね。<br />&lt;#mysql-casual@freenode:kamipo&gt; myisamはデータ領域をmysql内にpoolする仕組みはないので<br />&lt;#mysql-casual@freenode:craftworks&gt; MyISAM の話なのですか<br />&lt;#mysql-casual@freenode:kamipo&gt; *.MYDなファイルをOSのページキャッシュに乗せる感じですね<br />&lt;#mysql-casual@freenode:kamipo&gt; key_bufferはmysql内で確保してるんですがデータ領域はOS任せです。<br />&lt;#mysql-casual@freenode:craftworks&gt; 5.1.47 入れてみるかなー<br />&lt;#mysql-casual@freenode:craftworks&gt; Ubuntu 9.04 の deb だと、5.1.31<br />&lt;#mysql-casual@freenode:riywo_&gt; 5.5.4にしましょうw<br />&lt;#mysql-casual@freenode:craftworks&gt; ちょｗ<br />&lt;#mysql-casual@freenode:craftworks&gt; 人柱怖い＞＜<br />&lt;#mysql-casual@freenode:craftworks&gt; しかしみなさんあまりカジュアルじゃありませんね！<br />&lt;#mysql-casual@freenode:kamipo&gt; たしかに！<br />&lt;#mysql-casual@freenode:craftworks&gt; 勉強になります！<br />&lt;#mysql-casual@freenode:craftworks&gt; 頑張って流行りな設定で入れてブログに書こうかな...<br />&lt;#mysql-casual@freenode:craftworks&gt; 今もう5.1.49なのか<br />&lt;#mysql-casual@freenode:riywo_&gt; あ、出たんですね。5.1.49<br />&lt;#mysql-casual@freenode:riywo_&gt; ホントに毎月アップデートですね。<br />&lt;#mysql-casual@freenode:craftworks&gt; deb パッケージ無いのか...<br />&lt;#mysql-casual@freenode:craftworks&gt; コンパイル時間かかりそうだなぁ<br />&lt;#mysql-casual@freenode:craftworks&gt; alien 使ってあっさり RPM パッケージからインストールできました<br />&lt;#mysql-casual@freenode:riywo&gt; そんなことできるんですか。しらなかたです。<br />&lt;#mysql-casual@freenode:craftworks&gt; 僕もさっき初めて知りました。凄く...便利です...。<br />&gt;#mysql-casual@freenode:myfinder&lt; alien知ってたけど使った人初めて見た。。<br />&lt;#mysql-casual@freenode:Yappochan&gt; ほんとにあったw<br />&gt;#mysql-casual@freenode:myfinder&lt; しまった昨日ircのログblogに上げるの忘れてた。<br />&gt;#mysql-casual@freenode:myfinder&lt; 今夜あたりやるか。<br />&lt;#mysql-casual@freenode:riywo&gt; http://twitter.com/riywo/status/19875417836<br />&lt;#mysql-casual@freenode:riywo&gt; やるお<br />&gt;#mysql-casual@freenode:myfinder&lt; riwo: blogにも書いたりしてもらえると嬉しいのです。<br />&lt;#mysql-casual@freenode:riywo&gt; おぉ！<br />&lt;#mysql-casual@freenode:riywo&gt; たしかに<br />&lt;#mysql-casual@freenode:Yappochan&gt; UDFを作りまくったりstorage engineを書きまくったりするチャンネルだと伺いVIPの方からやってきました！<br />&gt;#mysql-casual@freenode:myfinder&lt; 今更聞けないようなことでも気にせず話すチャンネルなのです。<br />&lt;#mysql-casual@freenode:riywo&gt; 今更聞けないので聞きます。+oってなんすか？<br />&lt;#mysql-casual@freenode:Yappochan&gt; Otamajyakushi<br />&lt;#mysql-casual@freenode:Yappochan&gt; の o です<br />&gt;#mysql-casual@freenode:myfinder&lt; w<br />&gt;#mysql-casual@freenode:myfinder&lt; チャンネルのモードを変えたり、kickしたりbanできるようになります。<br />&gt;#mysql-casual@freenode:myfinder&lt; とマジレス。<br />&gt;#mysql-casual@freenode:myfinder&lt; kazuhoさんもきたw<br />&gt;#mysql-casual@freenode:myfinder&lt; いらっしゃいませ。<br />&lt;#mysql-casual@freenode:kazuho&gt; hi<br />&gt;#mysql-casual@freenode:myfinder&lt; yappo, kazuho: どんなチャンネルかは http://mysql-casual.org/ を見ると過去ログがうpしてあります。<br />&lt;#mysql-casual@freenode:craftworks&gt; おお。どんどんカジュアルじゃないチャンネルにｗ<br />&lt;#mysql-casual@freenode:riywo&gt; w<br />&lt;#mysql-casual@freenode:Yappochan&gt; 居るだけでカジュアルじゃないとか<br />&lt;#mysql-casual@freenode:Yappochan&gt; myfinderの方がよっぽどカジュアルじゃないのに！！１１<br />&gt;#mysql-casual@freenode:myfinder&lt; どういういみすかw<br />&lt;#mysql-casual@freenode:tokuhirom&gt; そういえば昨夜<br />&lt;#mysql-casual@freenode:tokuhirom&gt; 1時すぎぐらいに中国大使館のあたりで電話しながらあるいてるmyfinder似の人をみかけた<br />&lt;#mysql-casual@freenode:Yappochan&gt; ほんにんくさいw<br />&lt;#mysql-casual@freenode:Yappochan&gt; おれは<br />&gt;#mysql-casual@freenode:myfinder&lt; あれですか、ampmの前あたりですか。<br />&lt;#mysql-casual@freenode:Yappochan&gt; 0時過ぎに新宿で妖怪とワイン飲んでるmyfinder似の人をみかけた<br />&lt;#mysql-casual@freenode:tokuhirom&gt; ですね<br />&gt;#mysql-casual@freenode:myfinder&lt; ほんにんだw<br />&gt;#mysql-casual@freenode:myfinder&lt; 0時過ぎはyappoさんもいたでしょうに。<br />&gt;#mysql-casual@freenode:myfinder&lt; tokuhirom: ampmの隣の隣のビルが自宅なので、居るのはごく自然な話です。<br />&lt;#mysql-casual@freenode:tokuhirom&gt; うひ<br />&lt;#mysql-casual@freenode:riywo&gt; InnoDB pluginのデータ圧縮って、buffer pool上でも圧縮されてるという認識でよいんですかね。調べてないんですが。<br />&lt;#mysql-casual@freenode:craftworks&gt; sh2 さんのブログだと、圧縮する分メモリに乗り易いとか書いてました<br />&lt;#mysql-casual@freenode:riywo&gt; おおー<br />&lt;#mysql-casual@freenode:craftworks&gt; http://d.hatena.ne.jp/sh2/20090628<br />&lt;#mysql-casual@freenode:kazuho&gt; オンメモリ上で圧縮されてているのもあれば、圧縮と展開の両方のもあるって感じでしたっけ<br />&lt;#mysql-casual@freenode:riywo&gt; http://f.hatena.ne.jp/sh2/20090705012333<br />&lt;#mysql-casual@freenode:riywo&gt; この図ですね。<br />&lt;#mysql-casual@freenode:riywo&gt; craftworksさん、情報ありがとうございます！<br />&lt;#mysql-casual@freenode:craftworks&gt; 昨日から新しくセットアップしているので、今回ちょっとバラクーダ+データ圧縮試してみようかと思っています<br />&lt;#mysql-casual@freenode:craftworks&gt; いえいえ<br />&lt;#mysql-casual@freenode:riywo&gt; 5.5.4ですか？w<br />&lt;#mysql-casual@freenode:craftworks&gt; 推しますねｗ<br />&lt;#mysql-casual@freenode:riywo&gt; すいませんすいません<br />&lt;#mysql-casual@freenode:kazuho&gt; oo<br />&lt;#mysql-casual@freenode:craftworks&gt; ｗ<br />&gt;#mysql-casual@freenode:myfinder&lt; MySQL5.5は積極的に使いに行きたい。<br />&lt;#mysql-casual@freenode:xaicron&gt; oppai<br />&lt;#mysql-casual@freenode:xaicron&gt; miss<br />&lt;#mysql-casual@freenode:kamipo&gt; oppaiと聞いて<br />&gt;#mysql-casual@freenode:myfinder&lt; kamipoさん反応キーワードにしてるのかw<br />&lt;#mysql-casual@freenode:xaicron&gt; なんかつれたｗ<br />&lt;#mysql-casual@freenode:tokuhirom&gt; w<br />&lt;#mysql-casual@freenode:kamipo&gt; しまった、早く反応しすぎた...。<br />&lt;#mysql-casual@freenode:xaicron&gt; ｗｗ<br />&lt;#mysql-casual@freenode:craftworks&gt; マクロで反応してるんですよね<br />&gt;#mysql-casual@freenode:myfinder&lt; kamipoさんがなんかプレゼンしてるときにoppaiって入れるとgrowlするんですね。<br />&lt;#mysql-casual@freenode:xaicron&gt; マグロで反応に見えてななんのことかと思った<br />&lt;#mysql-casual@freenode:tokuhirom&gt; マグロなのに反応するとはこれいかに<br />&gt;#mysql-casual@freenode:myfinder&lt; うまいw<br />&lt;#mysql-casual@freenode:kamipo&gt; あらためてチャンネル確認すると、ここ #mysql-casual なんですね！<br />&lt;#mysql-casual@freenode:kazuho&gt; &gt; 由来は魚市場でエラなどを切り取られ、競りにかけられるマグロの姿の連想から、列車事故などで手足を失い横たわったままで動かない人間を、比喩的に「マグロ」と呼ぶ<br />&lt;#mysql-casual@freenode:kamipo&gt; 本当にカジュアルなチャンネルで安心しました！<br />&lt;#mysql-casual@freenode:kazuho&gt; &gt; 元々ゲイの間で1980年代から使われてきた言葉で、ハッテン場でコチコチに体を伸ばして、処理させるだけの人のこと<br />&lt;#mysql-casual@freenode:tokuhirom&gt; *-casual って下ネタばっかりいってるイメージ<br />&lt;#mysql-casual@freenode:xaicron&gt; うほｗ<br />&gt;#mysql-casual@freenode:myfinder&lt; 至ってまじめにCasualだったのに。<br />&lt;#mysql-casual@freenode:bayashi&gt; その言葉はなんだったのか気になる<br />&lt;#mysql-casual@freenode:kazuho&gt; bayashi: タイミングよすぎw<br />&lt;#mysql-casual@freenode:bayashi&gt; コチコチｗ<br />&lt;#mysql-casual@freenode:tokuhirom&gt; www<br />&gt;#mysql-casual@freenode:myfinder&lt; 「こんなにコチコチにデッドロックしやがって」とかそういう風に使えばいいんですね<br />&lt;#mysql-casual@freenode:riywo&gt; explain extended -&gt; show warningsはたまに見るとおもしろいですね。<br />#mysql-casual@freenode:riywo) とマジメぶってみる。<br />&lt;#mysql-casual@freenode:riywo_&gt; 短縮ダイヤル吹いた。http://blog.pear.co.jp/archives/445<br />&lt;#mysql-casual@freenode:craftworks&gt; 常々なぜ conf を cnf にしたか謎ですね<br />&lt;#mysql-casual@freenode:craftworks&gt; timestamp 型を NULL で UPDATE すると現在時刻が入っちゃうの初めて知りました。ハマった。<br />&gt;#mysql-casual@freenode:myfinder&lt; kamipoさんほうけいなのか。<br />&lt;#mysql-casual@freenode:kamipo&gt; まさか #mysql-casuaｌ で暴露されるとは思わなかった<br />&gt;#mysql-casual@freenode:myfinder&lt; スケールアップでひとつ上野おとこってDBの話かと思って。<br />&gt;#mysql-casual@freenode:myfinder&lt; SSDのRAID0でもLoadがあがってあっぷあっぷするDBもぁるので<br />&gt;#mysql-casual@freenode:myfinder&lt; そういうのはもはや分割するしかないのかな〜と。。。<br />&lt;#mysql-casual@freenode:kamipo&gt; うちもSSDはデータがメモリ超えたときの性能劣化を緩やかにできてる程度なので<br />&lt;#mysql-casual@freenode:kamipo&gt; メモリ増やせるなら増やすのが楽だなーという感じですね<br />&lt;#mysql-casual@freenode:riywo&gt; buffer_pool 120GBとかやりたいですね。<br />&gt;#mysql-casual@freenode:myfinder&lt; 1TB搭載可能なサーバとかが手に入るとしても、メモリ以外のところで限界が来そうだな〜<br />&gt;#mysql-casual@freenode:myfinder&lt; connectionとか。<br />&lt;#mysql-casual@freenode:riywo&gt; Tritonnの後継だそうです。http://mroonga.github.com/22:17:17 &lt;#mysql-casual@freenode:kamipo&gt; おぉ<br />&lt;#mysql-casual@freenode:kamipo&gt; groongaのストレージかと思ってスルーしてたらmysqlのpluggable storage engineがリリースされたんですね<br />&lt;#mysql-casual@freenode:riywo&gt; のようですね。<br />&gt;#mysql-casual@freenode:myfinder&lt; casualにhandlersocket pluginのセットアップをやるか。<br />&gt;#mysql-casual@freenode:myfinder&lt; mk-query-digestつかってますか？<br />&lt;#mysql-casual@freenode:riywo&gt; 真面目に調べたことなかったんですが、FEDERATEDってパーティションしてないSPIDERみたいに思えばいいんですかね。<br />&lt;#mysql-casual@freenode:kamipo&gt; FEDERATEDエンジンはcondition pushdownに対応してなかったと思うので、大きなテーブルだとかなり非効率になってしまう気がしますね<br />&lt;#mysql-casual@freenode:riywo&gt; お！ありがとうございます。色々調べてたら確かにテーブルが大きいといけてなさそうでした。<br />&lt;#mysql-casual@freenode:kamipo&gt; あれ、でもこれを見るとcondition pushdownされそうですね。。。 http://forge.mysql.com/wiki/MySQL_Internals_Optimizer/Condition_Pushdown<br />&lt;#mysql-casual@freenode:kamipo&gt; 僕が試してみたときはwhere句はpushdownされたような気はしますがlimit句はなくなってたので、limit句はpushdownされないのかもしれません。<br />&lt;#mysql-casual@freenode:craftworks&gt; FEDERATED って非推奨みたいですね<br />&lt;#mysql-casual@freenode:craftworks&gt; http://d.hatena.ne.jp/sh2/20091002<br />&lt;#mysql-casual@freenode:riywo&gt; バックエンドでtriggerで更新履歴を取る必要があったのですが、それが結構サイズでかくなってててDISK容量的にどうするか悩んで、FEDERATEDで外に書くとかMyISAMにするとかBarracudaにしてみるとか色々考えやってみましたが、、、<br />&lt;#mysql-casual@freenode:riywo&gt; 、、、<br />&lt;#mysql-casual@freenode:riywo&gt; 結果的にはDISKのでかいサーバが手に入って解決という。。。<br />&lt;#mysql-casual@freenode:xaicron&gt; ｗ<br />&gt;#mysql-casual@freenode:myfinder&lt; 更新履歴が同じDBにないといけない、ということでないのであればtriggerでqueueテーブルに突っ込んで、別のプロセスが別のDBに書き出すというのではだめでしょうか。<br />&lt;#mysql-casual@freenode:riywo&gt; がんばるのであればそれもありですね。</i> 
+                                    </div>
+
+
+                                </div>
+                                <div class="asset-footer">
+
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>タグ<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=irc&amp;limit=20';return false;" rel="tag">irc</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=mysql-casual&amp;limit=20';return false;" rel="tag">mysql-casual</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    <div id="trackbacks" class="trackbacks">
+    <h2 class="trackbacks-header">トラックバック(0)</h2>
+
+    
+    
+    <div class="trackbacks-info">
+        <p>トラックバックURL: http://mysql-casual.org/cgi-bin/mt/mt-tb.cgi/10</p>
+    </div>
+    
+
+
+    
+    
+</div>
+
+
+                    <div id="comments" class="comments">
+
+
+    
+    
+    
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">コメントする</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://mysql-casual.org/cgi-bin/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="10" />
+                <input type="hidden" name="__lang" value="ja" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">名前</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">電子メール</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">ログイン情報を記憶</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">コメント
+                    (スタイル用のHTMLタグを使えます)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="プレビュー" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="投稿" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-search widget">
+    <h3 class="widget-header">検索</h3>
+    <div class="widget-content">
+        <form method="get" action="http://mysql-casual.org/cgi-bin/mt/mt-search.cgi">
+            <input type="text" id="search" class="ti" name="search" value="" />
+
+            <input type="hidden" name="IncludeBlogs" value="2" />
+
+            <input type="hidden" name="limit" value="20" />
+            <input type="submit" accesskey="4" value="検索" />
+        </form>
+    </div>
+</div>
+
+<div class="widget-archive widget-archive-category widget">
+    <h3 class="widget-header">カテゴリ</h3>
+    <div class="widget-content">
+    
+    </div>
+</div>
+
+
+
+
+    <div class="widget-archive-monthly widget-archive widget">
+    <h3 class="widget-header">月別 <a href="http://mysql-casual.org/archives.html">アーカイブ</a></h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://mysql-casual.org/2019/07/">2019年7月 (1)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/08/">2010年8月 (2)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/07/">2010年7月 (3)</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+
+
+<div class="widget-pages widget">
+    <h3 class="widget-header">ウェブページ</h3>
+    <div class="widget-content">
+        <ul>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://mysql-casual.org/mt-static/images/status_icons/feed.gif" alt="購読する" width="9" height="9" /> <a href="http://mysql-casual.org/atom.xml">このブログを購読</a></li>
+
+        </ul>
+    </div>
+</div>
+<div class="widget-powered widget">
+    <div class="widget-content">
+        <a href="http://www.sixapart.jp/movabletype/"><img src="http://mysql-casual.org/mt-static/images/bug-pbmt-white.png" alt="Powered by Movable Type 5.02" width="120" height="75" /></a>
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+            <div class="widget-powered widget">
+                <div class="widget-content">
+                    Powered by <a href="http://www.sixapart.jp/movabletype/">Movable Type</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

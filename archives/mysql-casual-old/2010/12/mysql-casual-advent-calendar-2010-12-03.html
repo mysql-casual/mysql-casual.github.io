@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="Movable Type 5.02" />
+<link rel="stylesheet" href="http://mysql-casual.org/styles.css" type="text/css" />
+<link rel="start" href="http://mysql-casual.org/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://mysql-casual.org/atom.xml" />
+<script type="text/javascript" src="http://mysql-casual.org/mt.js"></script>
+
+
+    
+    <link rel="prev bookmark" href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-02.html" title="showコマンド - MySQL Casual Advent Calendar 2010" />
+    <link rel="next bookmark" href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-04.html" title="old_passwordsオプション - MySQL Casual Advent Calendar 2010" />
+    <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-03.html"
+    trackback:ping="http://mysql-casual.org/cgi-bin/mt/mt-tb.cgi/17"
+    dc:title="ユーザ設定入門 - MySQL Casual Advent Calendar 2010"
+    dc:identifier="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-03.html"
+    dc:subject=""
+    dc:description="「MySQLを使ってみようか」と思った人にとって、インストールの次に困るのがユー..."
+    dc:creator="riywo"
+    dc:date="2010-12-03T00:00:00+09:00" />
+</rdf:RDF>
+-->
+
+    
+    <title>ユーザ設定入門 - MySQL Casual Advent Calendar 2010 - MySQL Casual</title>
+</head>
+<body id="classic-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://mysql-casual.org/" accesskey="1">MySQL Casual</a></div>
+            <div id="header-description"></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-17" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">ユーザ設定入門 - MySQL Casual Advent Calendar 2010</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            <span class="vcard author">riywo</span> (<abbr class="published" title="2010-12-03T00:00:00+09:00">2010年12月 3日 00:00</abbr>)
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-03.html#comments">コメント(0)</a>
+
+
+                                        <span class="separator">|</span> <a href="http://mysql-casual.org/2010/12/mysql-casual-advent-calendar-2010-12-03.html#trackbacks">トラックバック(0)</a>
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p>「MySQLを使ってみようか」と思った人にとって、インストールの次に困るのがユーザ設定の部分だと思います。
+SQLiteとかをカジュアルに使いたくなるのは、ファイル1枚で管理が楽というのに加えて、
+ユーザの設定が必要なくてすぐに利用できるという点がある様な気がしてます。</p>
+
+<p>ただ、当然サービスレベルのアプリケーションを作っていく時にはどうしてもRDBMSを使うことになると
+思いますので、ここではMySQLでのユーザ設定の入門を簡単に説明したいと思います。</p>
+
+<p>RHELのCommunity版rpmを入れただけの場合、デフォルトのユーザはこんな感じです。</p>
+
+<pre>
+mysql> select user,host,password from mysql.user;
++------+-----------+----------+
+| user | host      | password |
++------+-----------+----------+
+| root | localhost |          |
+| root | HOSTNAME     |          |
+| root | 127.0.0.1 |          |
+|      | localhost |          |
+|      | HOSTNAME     |          |
++------+-----------+----------+
+</pre>
+
+<p>細かいことは鍵本などを見て頂くとして、基本的にアカウントは「ユーザ名＠接続元ホスト名」の様な感じで
+管理されています。上の結果を見ると、ユーザ名がrootか空っぽ、ホスト名は色々ありますが基本localhostからの
+接続のみができる様になっているようです。パスワードは全部空っぽ。rootとかいうユーザなのにパスワード無しで
+入れてしまうんですね。</p>
+
+<pre>
+$ mysql -uroot
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 7
+Server version: 5.1.50-community MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2010, Oracle and/or its affiliates. All rights reserved.
+This software comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to modify and redistribute it under the GPL v2 license
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> drop database oracle;  ←ウホ！
+</pre>
+
+<p>怖いですね。これではOracleに怒られます。</p>
+
+<p>また、webアプリケーションとか作る時はWEBサーバとDBサーバは別ホストにあることが多いと思いますので
+このままだとそもそもWEBサーバから接続できません。匿名でアクセスできるというのも気持ち悪いですね。</p>
+
+<p>とりあえず簡単に綺麗にするには、MySQL付属のmysql<em>secure</em>installコマンドを使いましょう。</p>
+
+<pre>
+$ mysql_secure_installation
+Enter current password for root (enter for none):  (今は空なのでenter)
+
+Set root password? [Y/n] y   ←rootのパスワードを設定します
+New password:
+Re-enter new password:
+
+Remove anonymous users? [Y/n] y  ←匿名ユーザを削除します
+
+Disallow root login remotely? [Y/n] y  ←今はroot@HOSTNAMEが消えるだけ。
+
+Remove test database and access to it? [Y/n] y ←デフォルトで作られるtestデータベースを消します
+
+Reload privilege tables now? [Y/n] y  ←上記権限設定をメモリ上に反映させます
+
+
+$ mysql -uroot -pPASSWORD  ←パスワードを直接書く場合、-pの後にスペースを入れない様に
+mysql> select user,host,password from mysql.user;
++------+-----------+-------------------------------------------+
+| user | host      | password                                  |
++------+-----------+-------------------------------------------+
+| root | localhost | *AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA |
+| root | 127.0.0.1 | *AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA |
++------+-----------+-------------------------------------------+
+
+mysql> show grants for 'root'@'localhost';
++----------------------------------------------------------------------------------------------------------------------------------------+
+| Grants for root@localhost                                                                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------+
+| GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY PASSWORD '*AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' WITH GRANT OPTION |
++----------------------------------------------------------------------------------------------------------------------------------------+
+</pre>
+
+<p>ひとまずすっきりしました。ここから先はご自分の環境のポリシーによると思いますが、
+僕のおすすめは以下のようなユーザを作成すると良いかなと思います。そしてこの設定をデフォルトとして
+どのMySQLサーバでも使い回す感じにすると楽チンです。</p>
+
+<ul>
+<li>リモートからもrootで入れる様にする
+<ul>
+<li>セキュリティ的には甘くなりますが、サーバが多いといちいちOSにログインするのが面倒なことも多いです。</li>
+<li>ファイアウォールで外に3306ポートを開けなければ、あまりうるさくなることでもないかと思います。</li>
+</ul></li>
+<li>アプリケーション用のデータベースを操作できるユーザを作成する
+<ul>
+<li>専用のユーザを作っておくことで、まぁ無いとは思いますがアプリからroot的操作をされない様にしましょう。</li>
+<li>master/slave構成を行う時はmasterにのみ書き込み操作などができるユーザを作るとなおよし。</li>
+</ul></li>
+<li>レプリケーション用のユーザを作成する
+<ul>
+<li>MySQLを使う場合、レプリケーションを組むことが多いと思いますが、master/slaveに限らずレプリ用のユーザはとりあえず作っておくと、Art of Replication的に便利だと思います。</li>
+</ul></li>
+</ul>
+
+<p>というわけで、それぞれ以下の様な感じのSQLで作っていきます。rootでログインして実行しましょう。</p>
+
+<pre>
+mysql> grant all privileges on *.* to 'root'@'%' identified by 'password' with grant option;
+mysql> create user 'write'@'%' identified by 'pass1';  (masterの場合のみ)
+mysql> grant all on `db`.* to 'write'@'%';  (masterの場合のみ)
+mysql> create user 'read'@'%' identified by 'pass2';
+mysql> grant select on `db`.* to 'read'@'%';
+mysql> grant replication slave on *.* to 'repli'@'%' identified by 'pass3';
+
++---------------------------------------------------------------------------------------+
+| GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY PASSWORD '' WITH GRANT OPTION |
++---------------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'write'@'%' IDENTIFIED BY PASSWORD ''                           |
+| GRANT ALL PRIVILEGES ON `db`.* TO 'write'@'%'                                         |
++---------------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'read'@'%' IDENTIFIED BY PASSWORD ''                            |
+| GRANT SELECT PRIVILEGES ON `db`.* TO 'read'@'%'                                       |
++---------------------------------------------------------------------------------------+
+| GRANT REPLICATION SLAVE ON *.* TO 'repli'@'%' IDENTIFIED BY PASSWORD ''               |
++---------------------------------------------------------------------------------------+
+</pre>
+
+<p>hostを%にすると、どこからでも接続できる様になります。これもセキュリティ的にはイマイチかもですが、
+WEBサーバが増える毎に全DBサーバでユーザを追加するというのは管理的には現実的ではない気がします。</p>
+
+<p>これで設定おわりです。これらの情報はmysqlという名前のデータベースに保存されていて、
+ストレージエンジンはMyISAMです。同じバージョンのMySQLを使うのであれば、
+次にセットアップしたDBサーバには、mysqlデータベースのファイルをコピーしてあげるだけで
+同様の設定にできるので楽チンですね。もちろん上記オペレーションをセットアップスクリプトみたいなので
+実行してもいいと思います。</p>
+
+<p>あとは、これらパスワードの管理にだけ注意して下さい。3306ポートが接続できて、ユーザ名とパスワードが
+漏れてしまうと楽々入れてしまいます。セキュアにする部分をMySQLだけで頑張るのは結構大変なので
+原則ネットワーク的に守られた環境に置くのがベターだと思います。</p>
+
+<p>あと、この辺の権限まわりのコマンドだったりそれによる挙動は5.0以降でも結構バージョンによって
+差異があったりするので、どこかの解説とかをあまり鵜呑みにせずに、実際に自分の使ってるバージョンで
+叩いてみて動作を確認してからサービスで使うようにしましょう。甘く見てると泣きをみます＞＜</p>
+
+<p>God bress your MySQL!</p>
+
+                                    </div>
+
+
+                                    <div id="more" class="asset-more">
+                                        
+
+                                    </div>
+
+                                </div>
+                                <div class="asset-footer">
+
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>タグ<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=advent%20calendar&amp;limit=20';return false;" rel="tag">advent calendar</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=mysql&amp;limit=20';return false;" rel="tag">mysql</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    <div id="trackbacks" class="trackbacks">
+    <h2 class="trackbacks-header">トラックバック(0)</h2>
+
+    
+    
+    <div class="trackbacks-info">
+        <p>トラックバックURL: http://mysql-casual.org/cgi-bin/mt/mt-tb.cgi/17</p>
+    </div>
+    
+
+
+    
+    
+</div>
+
+
+                    <div id="comments" class="comments">
+
+
+    
+    
+    
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">コメントする</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://mysql-casual.org/cgi-bin/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="17" />
+                <input type="hidden" name="__lang" value="ja" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">名前</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">電子メール</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">ログイン情報を記憶</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">コメント
+                    (スタイル用のHTMLタグを使えます)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="プレビュー" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="投稿" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-search widget">
+    <h3 class="widget-header">検索</h3>
+    <div class="widget-content">
+        <form method="get" action="http://mysql-casual.org/cgi-bin/mt/mt-search.cgi">
+            <input type="text" id="search" class="ti" name="search" value="" />
+
+            <input type="hidden" name="IncludeBlogs" value="2" />
+
+            <input type="hidden" name="limit" value="20" />
+            <input type="submit" accesskey="4" value="検索" />
+        </form>
+    </div>
+</div>
+
+<div class="widget-archive widget-archive-category widget">
+    <h3 class="widget-header">カテゴリ</h3>
+    <div class="widget-content">
+    
+    </div>
+</div>
+
+
+
+
+    <div class="widget-archive-monthly widget-archive widget">
+    <h3 class="widget-header">月別 <a href="http://mysql-casual.org/archives.html">アーカイブ</a></h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://mysql-casual.org/2019/07/">2019年7月 (1)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/12/">2010年12月 (5)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/11/">2010年11月 (1)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/08/">2010年8月 (3)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/07/">2010年7月 (3)</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+
+
+<div class="widget-pages widget">
+    <h3 class="widget-header">ウェブページ</h3>
+    <div class="widget-content">
+        <ul>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://mysql-casual.org/mt-static/images/status_icons/feed.gif" alt="購読する" width="9" height="9" /> <a href="http://mysql-casual.org/atom.xml">このブログを購読</a></li>
+
+        </ul>
+    </div>
+</div>
+<div class="widget-openid widget">
+    <div class="widget-content">
+        <em><strong>OpenID</strong>対応しています</em>
+        <a href="http://www.movabletype.jp/openid/">OpenIDについて</a>
+    </div>
+</div>
+
+<div class="widget-powered widget">
+    <div class="widget-content">
+        <a href="http://www.sixapart.jp/movabletype/"><img src="http://mysql-casual.org/mt-static/images/bug-pbmt-white.png" alt="Powered by Movable Type 5.02" width="120" height="75" /></a>
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+            <div class="widget-powered widget">
+                <div class="widget-content">
+                    Powered by <a href="http://www.sixapart.jp/movabletype/">Movable Type</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

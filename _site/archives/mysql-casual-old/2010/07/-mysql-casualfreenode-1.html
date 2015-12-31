@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="Movable Type 5.02" />
+<link rel="stylesheet" href="http://mysql-casual.org/styles.css" type="text/css" />
+<link rel="start" href="http://mysql-casual.org/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://mysql-casual.org/atom.xml" />
+<script type="text/javascript" src="http://mysql-casual.org/mt.js"></script>
+
+
+    
+    <link rel="prev bookmark" href="http://mysql-casual.org/2010/07/-mysql-casualfreenode.html" title="今日の #mysql-casual@freenode" />
+    <link rel="next bookmark" href="http://mysql-casual.org/2010/07/-mysql-casualfreenode-2.html" title="今日の #mysql-casual@freenode" />
+    <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://mysql-casual.org/2010/07/-mysql-casualfreenode-1.html"
+    trackback:ping="http://mysql-casual.org/cgi-bin/mt/mt-tb.cgi/8"
+    dc:title="今日の #mysql-casual@freenode"
+    dc:identifier="http://mysql-casual.org/2010/07/-mysql-casualfreenode-1.html"
+    dc:subject=""
+    dc:description="&amp;nbsp;mysqlのI/O発生状況監視ってやってますか？&amp;nbsp;SH2さ..."
+    dc:creator="myfinder"
+    dc:date="2010-07-22T01:57:26+09:00" />
+</rdf:RDF>
+-->
+
+    
+    <title>今日の #mysql-casual@freenode - MySQL Casual</title>
+</head>
+<body id="classic-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://mysql-casual.org/" accesskey="1">MySQL Casual</a></div>
+            <div id="header-description"></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-8" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">今日の #mysql-casual@freenode</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            <span class="vcard author">myfinder</span> (<abbr class="published" title="2010-07-22T01:57:26+09:00">2010年7月22日 01:57</abbr>)
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://mysql-casual.org/2010/07/-mysql-casualfreenode-1.html#comments">コメント(0)</a>
+
+
+                                        <span class="separator">|</span> <a href="http://mysql-casual.org/2010/07/-mysql-casualfreenode-1.html#trackbacks">トラックバック(0)</a>
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <i>&nbsp;mysqlのI/O発生状況監視ってやってますか？<br />&nbsp;SH2さんのblogにこんなんありました。<br />&nbsp;http://d.hatena.ne.jp/sh2/20100120<br />&nbsp;これはおもしろいですね。<br />&nbsp;やってません＞＜<br />&nbsp;これ面白そうですね<br />&nbsp;file par tableってメリットをあまり感じられないです。<br />&nbsp;http://nippondanji.blogspot.com/2009/01/innodb_16.html<br />&nbsp;これ見ると良さそうですけどね<br />&nbsp;パフォーマンス劣化具合のベンチマーク<br />&nbsp;http://www.mysqlperformanceblog.com/2008/03/21/mysql-file-system-fragmentation-benchmarks/<br />&nbsp;パフォーマンス劣化は1割位っぽいですね<br />&nbsp;DBの台数が多い場合DISK買い替えるとかあまりしないので、最初から決めうちの方が心休まりますw<br />&nbsp;1割って結構ある感じですが<br />&nbsp;ibdataの一度広がってしまうと、減らす事のできない性質は結構恐ろしい気がしてます。<br />&nbsp;手元の仮想環境内の開発環境とかだとディスクの容量ってあんまないから ibdata 膨張は怖いから innodb_file_per_table の方が嬉しいかも<br />&nbsp;＜ノートPC<br />&nbsp;file_per_tableって、膨張しないんでしたっけ？<br />&nbsp;膨張してもテーブル単位だから作り直ししやすいんじゃないですかね<br />&nbsp;なるほど、確かにそうですね。サービスだと厳しそうですが。<br />&nbsp;膨張したらdumpしてもう一回テーブル作り直す以外に対策なしですか。<br />&nbsp;てーぶるていうかDB<br />&nbsp;ibdataはそういうものらしいです。<br />&nbsp;ibdataが太るとパフォーマンス落ちるんですか？<br />&nbsp;調べたことないですね。1ファイルが大きくなりすぎるのはあんまりよくないイメージはありますが。<br />&nbsp;ところで明日はWEBセミナーですね。http://blogs.mysql.com/teamapac/2010/07/20/mysql-%E3%83%A9%E3%82%A4%E3%83%96-web-%E3%82%BB%E3%83%9F%E3%83%8A%E3%83%BCmysql-%E6%9C%80%E6%96%B0%E5%8B%95%E5%90%91%E3%81%94%E7%B4%B9%E4%BB%8B/<br />&nbsp;おっと、知らなかったw<br />&nbsp;運用上スナップショットとったりリストアすることが結構あって、データが大きいとデータ転送に時間がかかるんですが、ibdataは一度大きくなるとデータ消しても小さくできないのがいけてないですね<br />&nbsp;小さくするには一度ibdataを全消しするしかないですからね。<br />&nbsp;SELECT ID, TIME from information_schema.PROCESSLIST WHERE COMMAND = 'Sleep';<br />&nbsp;こんな感じでsleepになっているプロセスIDと時間が取れるので、それに対してkillするとかそういうのを一発でやるにはワンライナー書くしかないのだろうか。<br />&nbsp;maatkit?でしたっけ、その辺でできたりしないかなと思ったり。<br />&nbsp;http://www.maatkit.org/doc/mk-kill.html<br />&nbsp;これかも。<br />&nbsp;個人的にはmaatkitは大規模サービスではあまり使いどころがないと思ってます。開発環境とかはアリかも。<br />&nbsp;おおお<br />&nbsp;これだ。<br />&nbsp;ちょうど開発環境でそういう問題がありましてw<br />&nbsp;どんな所が使いどころがない、と感じたですか？<br />&nbsp;用意されてるツールがtableが小さかったりサーバが少ないことを想定して作られてる感じがしました。あまり使いこなしたわけではないですが。<br />&nbsp;なるほどです。<br />&nbsp;あと使い方がわかりにくいw<br />&nbsp;w<br />&nbsp;mk-slave-moveは便利でした<br />&nbsp;perlで書かれてるから読めばわかりますよ！<br />&nbsp;ですね。読めますね。<br />&nbsp;こないだのhbstudyではてなのひとが発表してました。<br />&nbsp;http://www.slideshare.net/marqs/maatkit-4098945<br />&nbsp;今度shardingする用があるので検証できたら一部の作業で使ってみようかな。<br />&nbsp;slave操作周りで。 </i>
+                                    </div>
+
+
+                                </div>
+                                <div class="asset-footer">
+
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>タグ<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=irc&amp;limit=20';return false;" rel="tag">irc</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://mysql-casual.org/cgi-bin/mt/mt-search.cgi?blog_id=2&amp;tag=mysql-casual&amp;limit=20';return false;" rel="tag">mysql-casual</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    <div id="trackbacks" class="trackbacks">
+    <h2 class="trackbacks-header">トラックバック(0)</h2>
+
+    
+    
+    <div class="trackbacks-info">
+        <p>トラックバックURL: http://mysql-casual.org/cgi-bin/mt/mt-tb.cgi/8</p>
+    </div>
+    
+
+
+    
+    
+</div>
+
+
+                    <div id="comments" class="comments">
+
+
+    
+    
+    
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">コメントする</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://mysql-casual.org/cgi-bin/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="8" />
+                <input type="hidden" name="__lang" value="ja" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">名前</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">電子メール</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">ログイン情報を記憶</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">コメント
+                    (スタイル用のHTMLタグを使えます)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="プレビュー" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="投稿" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-search widget">
+    <h3 class="widget-header">検索</h3>
+    <div class="widget-content">
+        <form method="get" action="http://mysql-casual.org/cgi-bin/mt/mt-search.cgi">
+            <input type="text" id="search" class="ti" name="search" value="" />
+
+            <input type="hidden" name="IncludeBlogs" value="2" />
+
+            <input type="hidden" name="limit" value="20" />
+            <input type="submit" accesskey="4" value="検索" />
+        </form>
+    </div>
+</div>
+
+<div class="widget-archive widget-archive-category widget">
+    <h3 class="widget-header">カテゴリ</h3>
+    <div class="widget-content">
+    
+    </div>
+</div>
+
+
+
+
+    <div class="widget-archive-monthly widget-archive widget">
+    <h3 class="widget-header">月別 <a href="http://mysql-casual.org/archives.html">アーカイブ</a></h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://mysql-casual.org/2019/07/">2019年7月 (1)</a></li>
+        
+    
+        
+            <li><a href="http://mysql-casual.org/2010/07/">2010年7月 (3)</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+
+
+<div class="widget-pages widget">
+    <h3 class="widget-header">ウェブページ</h3>
+    <div class="widget-content">
+        <ul>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://mysql-casual.org/mt-static/images/status_icons/feed.gif" alt="購読する" width="9" height="9" /> <a href="http://mysql-casual.org/atom.xml">このブログを購読</a></li>
+
+        </ul>
+    </div>
+</div>
+<div class="widget-powered widget">
+    <div class="widget-content">
+        <a href="http://www.sixapart.jp/movabletype/"><img src="http://mysql-casual.org/mt-static/images/bug-pbmt-white.png" alt="Powered by Movable Type 5.02" width="120" height="75" /></a>
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+            <div class="widget-powered widget">
+                <div class="widget-content">
+                    Powered by <a href="http://www.sixapart.jp/movabletype/">Movable Type</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

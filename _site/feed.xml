@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MySQL Casual</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+    <description>perl-casualのコンセプトに触発され、もっと深く浅く、広く狭くMySQLを使っていこうと思っている趣旨の人とのつながりを作っていくための緩めのコミュニティです。 また、今更聞けない書けないようなことも改めて書いたりしていきます。
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 01 Jan 2016 02:13:02 +0900</pubDate>
-    <lastBuildDate>Fri, 01 Jan 2016 02:13:02 +0900</lastBuildDate>
+    <pubDate>Fri, 01 Jan 2016 02:16:28 +0900</pubDate>
+    <lastBuildDate>Fri, 01 Jan 2016 02:16:28 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>

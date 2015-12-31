@@ -6,4 +6,4 @@ categories: mysql casual
 ---
 さくらのレンタルサーバを長らく使っていたのですが、もっと更新しやすいようにgithubへ移りました。今後ともよろしくお願いいたします。
 
-アーカイブは [こちら](http://mysql-casual.org/archive/mysql-casual-old/) にあります。
+アーカイブは [こちら](https://github.com/mysql-casual/mysql-casual.github.io/tree/master/archives/mysql-casual-old) にあります。

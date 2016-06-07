@@ -6,9 +6,27 @@
 </description>
     <link>http://mysql-casual.org/</link>
     <atom:link href="http://mysql-casual.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 01 Jan 2016 16:28:14 +0900</pubDate>
-    <lastBuildDate>Fri, 01 Jan 2016 16:28:14 +0900</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>
+    <pubDate>Tue, 07 Jun 2016 12:27:55 +0900</pubDate>
+    <lastBuildDate>Tue, 07 Jun 2016 12:27:55 +0900</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>MySQL CasualのSlackへの参加</title>
+        <description>&lt;p&gt;活動のメインであるSlackへの参加方法が書かれていないことに最近気が付きました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://mysql-casual-slackin.herokuapp.com/&quot;&gt;slackin&lt;/a&gt; でメールアドレスを登録すると自動で招待メールが飛ぶようになっています。
+また、Slackでの過去のチャット履歴は &lt;a href=&quot;http://mysql-casual.slackarchive.io/&quot;&gt;slackarchive&lt;/a&gt; で読むことができます。”CHANNELS” で “#general” を選んでください（今のところ、 #general 以外のチャンネルはないようです）&lt;/p&gt;
+</description>
+        <pubDate>Tue, 07 Jun 2016 00:00:00 +0900</pubDate>
+        <link>http://mysql-casual.org/mysql/casual/2016/06/07/how-to-join-mysql-mysql-casual.html</link>
+        <guid isPermaLink="true">http://mysql-casual.org/mysql/casual/2016/06/07/how-to-join-mysql-mysql-casual.html</guid>
+        
+        
+        <category>mysql</category>
+        
+        <category>casual</category>
+        
+      </item>
     
       <item>
         <title>MySQL Casual Talks vol.9 開催します</title>
